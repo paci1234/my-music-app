@@ -2,6 +2,13 @@ body {
   background: #171717;
 }
 
+button, input {
+  &:focus,
+  &:active {
+    outline: none!important;
+  }
+}
+
 .toolbar {
   height: 40px;
   display: flex;
@@ -29,6 +36,7 @@ body {
 }
 
 section {
+  overflow-x: hidden;
   color: white;
   p {
     margin-bottom: 0.5rem;
@@ -36,10 +44,9 @@ section {
 }
 
 .album {
-  .card {
+  .card-img {
     border: none;
     .cover-img {
-      height: 350px;
       max-width: 100%;
     }
     .card-body {

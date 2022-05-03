@@ -16,4 +16,8 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.isReady = true;
   }
+
+  openAlbum() {
+    this.album = !this.album;
+  }
 }

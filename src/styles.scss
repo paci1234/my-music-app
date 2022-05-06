@@ -38,6 +38,29 @@ section, header {
       cursor: pointer;
     }
   }
+  .icons {
+    .btn-group {
+      display: inline-block;
+      vertical-align: inherit;
+      cursor: pointer;
+      i {
+        &:hover {
+          opacity: 0.6;
+        }
+      }
+    }
+  }
+}
+
+.carousel-inner{
+  height: 600px;
+  img {
+    position: absolute;
+    object-fit:cover;
+    top: 0;
+    left: 0;
+    min-height: 500px;
+  }
 }
 
 section {

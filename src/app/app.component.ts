@@ -9,6 +9,9 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit {
   public title = 'MY MUSIC APP';
   album = false;
+  lightColor: any = 'white';
+  darkColor: any = 'black';
+  checked = false;
   isReady = false;
 
   constructor() {}
@@ -20,4 +23,6 @@ export class AppComponent implements OnInit {
   openAlbum() {
     this.album = !this.album;
   }
+
+  changeTheme() {}
 }

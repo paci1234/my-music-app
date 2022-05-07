@@ -20,10 +20,14 @@
         <i class="fa fa-gear" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false"></i>
         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenu2">
           <li>
-            <button class="dropdown-item" type="button">Light theme</button>
+            <button class="dropdown-item" type="button" (click)="changeTheme()">
+              <i class="fa fa-check"></i> Light theme
+            </button>
           </li>
           <li>
-            <button class="dropdown-item" type="button">Dark theme</button>
+            <button class="dropdown-item dark" type="button" (click)="changeTheme()">
+              <i class="fa fa-check"></i> Dark theme
+            </button>
           </li>
         </ul>
       </div>
@@ -53,6 +57,47 @@
         <p class="lead text-muted">Choose your favorite <b>POP</b> artists.</p>
         <p class="lead text-muted">Make your own <b>playlists</b> and listen to their <b>tracks</b>.</p>
       </div>
+
+      <div class="row mt-5">
+        <div class="col-sm-12">
+          <button class="btn btn-primary mx-2">Create a Playlist</button>
+          <button class="btn btn-secondary btn-danger mx-2" (click)="openAlbum()">Pick an Artist</button>
+        </div>
+      </div>
+
+      <section *ngIf="album" class="album mt-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-4 text-center">
+              <div class="card-img img-box">
+                <img class="cover-img" src="assets/images/artists/ariana_grande_bg.jpg">
+                <div class="card-body text-center">
+                  <p class="card-text text-left">Ariana Grande</p>
+                  <button type="button" class="btn btn-sm btn-primary text-right">Choose</button>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4 text-center">
+              <div class="card-img img-box">
+                <img class="cover-img" src="assets/images/artists/justin_timberlake_bg.jpg">
+                <div class="card-body text-center">
+                  <p class="card-text text-left">Justin Timberlake</p>
+                  <button type="button" class="btn btn-sm btn-primary text-right">Choose</button>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4 text-center">
+              <div class="card-img img-box">
+                <img class="cover-img" src="assets/images/artists/dua_lipa_bg.jpg">
+                <div class="card-body text-center">
+                  <p class="card-text text-left">Dua Lipa</p>
+                  <button type="button" class="btn btn-sm btn-primary text-right">Choose</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <!-- Carousel -->
       <div id="demo" class="carousel slide mt-5" data-bs-ride="carousel">
@@ -86,47 +131,9 @@
         </button>
       </div>
 
-      <div class="row mt-5">
-        <div class="col-sm-12">
-          <button class="btn btn-primary mx-2">Create a Playlist</button>
-          <button class="btn btn-secondary btn-danger mx-2" (click)="openAlbum()">Pick an Artist</button>
-        </div>
-      </div>
     </header>
 
-    <section *ngIf="album" class="album mt-5">
-      <div class="container">
-        <div class="row">
-          <div class="col text-center">
-            <div class="card-img img-box">
-              <img class="cover-img" src="assets/images/artists/ariana_grande_bg.jpg">
-              <div class="card-body text-center">
-                <p class="card-text text-left">Ariana Grande</p>
-                <button type="button" class="btn btn-sm btn-primary text-right">Choose</button>
-              </div>
-            </div>
-          </div>
-          <div class="col text-center">
-            <div class="card-img img-box">
-              <img class="cover-img" src="assets/images/artists/justin_timberlake_bg.jpg">
-              <div class="card-body text-center">
-                <p class="card-text text-left">Justin Timberlake</p>
-                <button type="button" class="btn btn-sm btn-primary text-right">Choose</button>
-              </div>
-            </div>
-          </div>
-          <div class="col text-center">
-            <div class="card-img img-box">
-              <img class="cover-img" src="assets/images/artists/dua_lipa_bg.jpg">
-              <div class="card-body text-center">
-                <p class="card-text text-left">Dua Lipa</p>
-                <button type="button" class="btn btn-sm btn-primary text-right">Choose</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+
   </section>
 
   <!-- End of Main section -->

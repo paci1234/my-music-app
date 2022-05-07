@@ -13,23 +13,26 @@
       <a id="search" aria-label="search" target="_blank" rel="">
         <i class="fa fa-search"></i>
       </a>
+      <a aria-label="player" target="_blank" rel="">
+        <i class="fa fa-music"></i>
+      </a>
       <div class="btn-group">
-        <i class="fa fa-bars" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false"></i>
+        <i class="fa fa-gear" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false"></i>
         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenu2">
           <li>
-            <button class="dropdown-item" type="button">Action</button>
+            <button class="dropdown-item" type="button">Light theme</button>
           </li>
           <li>
-            <button class="dropdown-item" type="button">Another action</button>
-          </li>
-          <li>
-            <button class="dropdown-item" type="button">Something else here</button>
+            <button class="dropdown-item" type="button">Dark theme</button>
           </li>
         </ul>
       </div>
       <div class="btn-group">
         <i class="fa fa-user" id="logoutMenu" data-bs-toggle="dropdown" aria-expanded="false"></i>
         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="logoutMenu">
+          <li>
+            <button class="dropdown-item" type="button">Profile</button>
+          </li>
           <li>
             <button class="dropdown-item" type="button">Logout</button>
           </li>
@@ -44,8 +47,15 @@
   <section class="main-content">
     <header class="text-center">
 
+      <div class="container">
+        <h1 class="fw-light mt-5">Music App | Angular JS demo.</h1>
+        <hr>
+        <p class="lead text-muted">Choose your favorite <b>POP</b> artists.</p>
+        <p class="lead text-muted">Make your own <b>playlists</b> and listen to their <b>tracks</b>.</p>
+      </div>
+
       <!-- Carousel -->
-      <div id="demo" class="carousel slide" data-bs-ride="carousel">
+      <div id="demo" class="carousel slide mt-5" data-bs-ride="carousel">
 
         <!-- Indicators/dots -->
         <div class="carousel-indicators">
@@ -75,11 +85,6 @@
           <span class="carousel-control-next-icon"></span>
         </button>
       </div>
-
-      <h1 class="fw-light mt-5">Music App | Angular JS demo.</h1>
-      <hr>
-      <p class="lead text-muted  mt-5">Choose your favorite POP artists.</p>
-      <p class="lead text-muted">Make your own playlists and listen to their tracks.</p>
 
       <div class="row mt-5">
         <div class="col-sm-12">

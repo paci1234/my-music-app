@@ -1,5 +1,5 @@
 body {
-  background: #171717;
+  background: black;
 }
 
 ///* Resets */
@@ -48,12 +48,17 @@ section, header {
           opacity: 0.6;
         }
       }
+      &:last-child {
+        i {
+          padding-right: 0;
+        }
+      }
     }
   }
 }
 
 .carousel-inner{
-  height: 600px;
+  height: 585px;
   img {
     position: absolute;
     object-fit:cover;

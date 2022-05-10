@@ -53,8 +53,8 @@
 
       <div class="container">
         <h1 class="fw-light mt-5">Music App | Angular JS demo.</h1>
-        <hr>
-        <p class="lead text-muted">Choose your favorite <b>POP</b> artists.</p>
+        <hr class="mt-3">
+        <p class="lead text-muted mt-3">Choose your favorite <b>POP</b> artists.</p>
         <p class="lead text-muted">Make your own <b>playlists</b> and listen to their <b>tracks</b>.</p>
       </div>
 
@@ -68,7 +68,7 @@
       <section *ngIf="album" class="album mt-5">
         <div class="container">
           <div class="row">
-            <div class="col-sm-4 text-center">
+            <div class="col-sm-3 text-center">
               <div class="card-img img-box">
                 <img class="cover-img" src="assets/images/artists/ariana_grande_bg.jpg">
                 <div class="card-body text-center">
@@ -77,7 +77,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-sm-4 text-center">
+            <div class="col-sm-3 text-center">
               <div class="card-img img-box">
                 <img class="cover-img" src="assets/images/artists/justin_timberlake_bg.jpg">
                 <div class="card-body text-center">
@@ -86,11 +86,20 @@
                 </div>
               </div>
             </div>
-            <div class="col-sm-4 text-center">
+            <div class="col-sm-3 text-center">
               <div class="card-img img-box">
                 <img class="cover-img" src="assets/images/artists/dua_lipa_bg.jpg">
                 <div class="card-body text-center">
                   <p class="card-text text-left">Dua Lipa</p>
+                  <button type="button" class="btn btn-sm btn-primary text-right">Choose</button>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-3 text-center">
+              <div class="card-img img-box">
+                <img class="cover-img" src="assets/images/artists/kylie_minogue_bg.jpg">
+                <div class="card-body text-center">
+                  <p class="card-text text-left">Kylie Minogue</p>
                   <button type="button" class="btn btn-sm btn-primary text-right">Choose</button>
                 </div>
               </div>
@@ -129,6 +138,43 @@
         <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
           <span class="carousel-control-next-icon"></span>
         </button>
+      </div>
+
+      <!-- Button trigger modal -->
+      <section class="mt-5">
+        <div class="row">
+          <div class="col-sm-12">
+            <button type="button"
+                    class="btn btn-primary"
+                    data-toggle="modal"
+                    data-target="#exampleModalCenter">
+              Search
+            </button>
+          </div>
+        </div>
+      </section>
+
+
+
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              ...
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
       </div>
 
     </header>

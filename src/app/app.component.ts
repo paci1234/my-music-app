@@ -20,12 +20,17 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.isReady = true;
-    $(document).on('scroll', function() {
+    $(document).on('scroll', () => {
       if ( $(window).scrollTop() > 30) {
         $('.toolbar').addClass('toolbar-on-scroll');
       } else {
         $('.toolbar').removeClass('toolbar-on-scroll');
       }
+    });
+    $(document).ready(() => {
+      $('#search-in-album').on('shown.bs.modal', () => {
+        $('#search-in-album').trigger('focus');
+      });
     });
   }
 

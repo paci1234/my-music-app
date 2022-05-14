@@ -31,9 +31,7 @@
               "src/styles.scss",
               "./node_modules/font-awesome/scss/font-awesome.scss"
             ],
-            "scripts": [
-              "../node_modules/jquery/dist/jquery.min.js"
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {

@@ -1,4 +1,5 @@
 import { Component, OnInit, HostListener } from '@angular/core';
+import {trigger} from '@angular/animations';
 declare var $: any;
 
 @Component({
@@ -30,6 +31,16 @@ export class AppComponent implements OnInit {
     $(document).ready(() => {
       $('#search-in-album').on('shown.bs.modal', () => {
         $('#search-in-album').trigger('focus');
+      });
+      $('#albumBtn').on( 'click', () => {
+        const target = $('html,body');
+        target.animate({scrollTop: target.height()}, 200);
+        $('#dummy').trigger('click');
+      });
+      $('#arrowDown').on( 'click', () => {
+        $('html, body').animate({
+          scrollTop: $("#action-buttons").offset().top
+        }, 200);
       });
     });
   }

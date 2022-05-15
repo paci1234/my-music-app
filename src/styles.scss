@@ -1,3 +1,4 @@
+@import '~simplebar/dist/simplebar.css';
 body {
   background: #14171a;
 }
@@ -15,6 +16,26 @@ button, input {
   }
 }
 
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 hr {
   width: 50%;
   margin: 0 auto;
@@ -30,7 +51,7 @@ hr {
 
 #action-buttons {
   height: 100%;
-  min-height: 700px;
+  min-height: 600px;
   top: 0;
 }
 

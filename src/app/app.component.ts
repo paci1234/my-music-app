@@ -1,5 +1,6 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import {trigger} from '@angular/animations';
+import 'simplebar';
 declare var $: any;
 
 @Component({

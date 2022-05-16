@@ -106,7 +106,14 @@
               </div>
               <section *ngIf="album" class="album mt-5">
                 <div class="container">
-                  <div class="row">
+                  <div class="row mt-5">
+                    <div class="col-sm-4 offset-sm-4">
+                      <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search by Name" [(ngModel)]="searchTerm">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row mt-5">
                     <div class="col-sm-3 text-center">
                       <div class="card-img img-box">
                         <img class="cover-img" src="assets/images/artists/ariana_grande_bg.jpg">

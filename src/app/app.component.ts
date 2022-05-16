@@ -16,6 +16,7 @@ export class AppComponent implements OnInit {
   lightColor: any = 'white';
   darkColor: any = 'black';
   checked = false;
+  searchTerm: string;
   isReady = false;
 
   constructor() {}

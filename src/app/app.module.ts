@@ -5,8 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {AngularFontAwesomeModule} from "angular-font-awesome";
 import {FormsModule} from '@angular/forms';
-import {SimplebarAngularModule} from 'simplebar-angular';
-
 @NgModule({
   declarations: [
     AppComponent
@@ -15,8 +13,7 @@ import {SimplebarAngularModule} from 'simplebar-angular';
     BrowserModule,
     AppRoutingModule,
     AngularFontAwesomeModule,
-    FormsModule,
-    SimplebarAngularModule
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

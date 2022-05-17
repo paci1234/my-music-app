@@ -94,12 +94,9 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss",
-              "./node_modules/simplebar/dist/simplebar.css"
+              "src/styles.scss"
             ],
-            "scripts": [
-              ".node_modules/simplebar/dist/simplebar.js"
-            ]
+            "scripts": []
           }
         },
         "lint": {

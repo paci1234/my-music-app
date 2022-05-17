@@ -1,5 +1,6 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import {trigger} from '@angular/animations';
+import {PrimeNGConfig} from 'primeng/api';
 declare var $: any;
 
 @Component({
@@ -18,10 +19,10 @@ export class AppComponent implements OnInit {
   searchTerm: string;
   isReady = false;
 
-  constructor() {}
+  constructor(private primengConfig: PrimeNGConfig) {}
 
   ngOnInit() {
-    this.isReady = true;
+    // Jquery
     $(document).on('scroll', () => {
       if ( $(window).scrollTop() > 30) {
         $('.toolbar').addClass('toolbar-on-scroll');
@@ -44,6 +45,9 @@ export class AppComponent implements OnInit {
         }, 200);
       });
     });
+    // End of Jquery
+    this.primengConfig.ripple = true;
+    this.isReady = true;
   }
 
   openAlbum() {

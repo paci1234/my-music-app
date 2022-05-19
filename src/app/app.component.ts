@@ -1,6 +1,8 @@
-import { Component, OnInit, HostListener } from '@angular/core';
-import {trigger} from '@angular/animations';
+import {Component, OnInit, HostListener} from '@angular/core';
 import {PrimeNGConfig} from 'primeng/api';
+import {ArtistsService} from './artists.service';
+import {Artists} from './artists';
+
 declare var $: any;
 
 @Component({
@@ -17,14 +19,19 @@ export class AppComponent implements OnInit {
   darkColor: any = 'black';
   checked = false;
   searchTerm: string;
+  artists: Artists[];
   isReady = false;
 
-  constructor(private primengConfig: PrimeNGConfig) {}
+  constructor(
+    private primengConfig: PrimeNGConfig,
+    private artistsSvc: ArtistsService
+  ) {
+  }
 
   ngOnInit() {
     // Jquery
     $(document).on('scroll', () => {
-      if ( $(window).scrollTop() > 30) {
+      if ($(window).scrollTop() > 30) {
         $('.toolbar').addClass('toolbar-on-scroll');
       } else {
         $('.toolbar').removeClass('toolbar-on-scroll');
@@ -34,24 +41,28 @@ export class AppComponent implements OnInit {
       $('#search-in-album').on('shown.bs.modal', () => {
         $('#search-in-album').trigger('focus');
       });
-      $('#albumBtn').on( 'click', () => {
+      $('#albumBtn').on('click', () => {
         const target = $('html,body');
         target.animate({scrollTop: target.height()}, 200);
         $('#dummy').trigger('click');
       });
-      $('#arrowDown').on( 'click', () => {
+      $('#arrowDown').on('click', () => {
         $('html, body').animate({
-          scrollTop: $("#action-buttons").offset().top
+          scrollTop: $('#action-buttons').offset().top
         }, 200);
       });
-      $('#pick-an-artist').on( 'click', () => {
+      $('#pick-an-artist').on('click', () => {
         $('html, body').animate({
-          scrollTop: $(".album").offset().top
+          scrollTop: $('.album').offset().top
         }, 200);
       });
     });
-    // End of Jquery
+
     this.primengConfig.ripple = true;
+    this.artistsSvc.getArtists().subscribe(items => {
+      console.log(JSON.stringify(items));
+      this.artists = items;
+    });
     this.isReady = true;
   }
 
@@ -68,5 +79,6 @@ export class AppComponent implements OnInit {
   //   }
   // }
 
-  changeTheme() {}
+  changeTheme() {
+  }
 }

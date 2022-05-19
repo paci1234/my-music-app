@@ -7,7 +7,9 @@ import {FormsModule} from '@angular/forms';
 import {ButtonModule} from 'primeng/button';
 import {RippleModule} from 'primeng/ripple';
 import {DataViewModule} from 'primeng/dataview';
-import {CdkVirtualScrollViewport, ScrollingModule} from '@angular/cdk/scrolling';
+import {ScrollingModule} from '@angular/cdk/scrolling';
+import {ArtistsService} from './artists.service';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -21,8 +23,9 @@ import {CdkVirtualScrollViewport, ScrollingModule} from '@angular/cdk/scrolling'
     RippleModule,
     DataViewModule,
     ScrollingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ArtistsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

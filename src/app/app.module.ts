@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import {FormsModule} from '@angular/forms';
 import {ButtonModule} from 'primeng/button';
 import {RippleModule} from 'primeng/ripple';
+import {DataViewModule} from 'primeng/dataview';
+import {CdkVirtualScrollViewport, ScrollingModule} from '@angular/cdk/scrolling';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import {RippleModule} from 'primeng/ripple';
     AppRoutingModule,
     FormsModule,
     ButtonModule,
-    RippleModule
+    RippleModule,
+    DataViewModule,
+    ScrollingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

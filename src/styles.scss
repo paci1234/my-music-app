@@ -201,7 +201,18 @@ footer {
       }
     }
   }
+  span {
+    color: white;
+  }
 }
+
+.p-input-icon-left > .p-inputtext {
+  padding-left: 2.5rem;
+}
+
+//.p-inputtext:enabled:focus {
+//  margin-top: 4px;
+//}
 
 
 ///* Other styles */

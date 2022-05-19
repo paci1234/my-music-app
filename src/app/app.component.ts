@@ -44,6 +44,11 @@ export class AppComponent implements OnInit {
           scrollTop: $("#action-buttons").offset().top
         }, 200);
       });
+      $('#pick-an-artist').on( 'click', () => {
+        $('html, body').animate({
+          scrollTop: $(".album").offset().top
+        }, 200);
+      });
     });
     // End of Jquery
     this.primengConfig.ripple = true;

@@ -110,57 +110,110 @@
           </div>
 
           <section *ngIf="album" class="album">
-            <div class="grid mt-5">
-              <div class="col-4 w-full">
+<!--            <div class="grid mt-5">-->
+<!--              <div class="col-4 w-full">-->
+<!--                      <span class="p-input-icon-left">-->
+<!--                        <i class="pi pi-search"></i>-->
+<!--                        <input type="search scalein" pinputtext placeholder="Search by Name"-->
+<!--                               class="p-inputtext p-component p-element w-21rem">-->
+<!--                      </span>-->
+<!--                <input type="text" class="form-control scalein animation-duration-200"-->
+<!--                       placeholder="Search by Name" [(ngModel)]="searchTerm">-->
+<!--              </div>-->
+<!--            </div>-->
+
+            <div class="card mt-5">
+              <p-dataView #dv [value]="artists" filterBy="name">
+                <ng-template pTemplate="header">
+                  <div class="flex justify-content-center flex-wrap card-container">
+<!--                    This is going to be alphabetical order dropdown list -->
+<!--                    <div>-->
+<!--                      <p-dropdown [options]="sortOptions" [(ngModel)]="sortKey" placeholder="Sort By"-->
+<!--                                  (onChange)="onSortChange($event)" [style]="{'min-width':'15em'}"></p-dropdown>-->
+<!--                    </div>-->
+                    <div>
                       <span class="p-input-icon-left">
                         <i class="pi pi-search"></i>
                         <input type="search scalein" pinputtext placeholder="Search by Name"
-                               class="p-inputtext p-component p-element w-21rem">
+                               class="p-inputtext p-component p-element w-21rem"
+                               (input)="dv.filter($event.target.value, 'contains')">
                       </span>
-                <!--                      <input type="text" class="form-control scalein animation-duration-200"-->
-                <!--                             placeholder="Search by Name" [(ngModel)]="searchTerm">-->
-              </div>
-            </div>
-            <div class="grid mt-5">
-              <div class="col-12 sm:col-3 text-center scalein animation-duration-400">
-                <div class="card-img img-box">
-                  <img class="cover-img" src="assets/images/artists/ariana_grande_bg.jpg">
-                  <div class="card-body text-center">
-                    <p class="card-text text-center">Ariana Grande</p>
-                    <button type="button" pButton pRipple label="Choose" class="p-button-info p-button-sm"></button>
-                  </div>
-                </div>
-              </div>
-              <div class="col-12 sm:col-3 text-center scalein animation-duration-400">
-                <div class="card-img img-box">
-                  <img class="cover-img" src="assets/images/artists/justin_timberlake_bg.jpg">
-                  <div class="card-body text-center">
-                    <p class="card-text text-center">Justin Timberlake</p>
-                    <button type="button" pButton pRipple label="Choose" class="p-button-info p-button-sm"></button>
-                  </div>
-                </div>
-              </div>
-              <div class="col-12 sm:col-3 text-center scalein animation-duration-400">
-                <div class="card-img img-box">
-                  <img class="cover-img" src="assets/images/artists/dua_lipa_bg.jpg">
-                  <div class="card-body text-center">
-                    <p class="card-text text-center">Dua Lipa</p>
-                    <button type="button" pButton pRipple label="Choose" class="p-button-info p-button-sm"></button>
-                  </div>
-                </div>
-              </div>
-              <div class="col-12 sm:col-3 text-center scalein animation-duration-400">
-                <div class="card-img img-box">
-                  <img class="cover-img" src="assets/images/artists/kylie_minogue_bg.jpg">
-                  <div class="card-body text-center">
-                    <p class="card-text text-center">Kylie Minogue</p>
-                    <button type="button" pButton pRipple label="Choose" class="p-button-info p-button-sm"></button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
+                    </div>
 
+                    <div>
+<!--                      <p-dataViewLayoutOptions></p-dataViewLayoutOptions>-->
+                    </div>
+                  </div>
+                </ng-template>
+
+                <ng-template let-artist pTemplate="listItem">
+                  <div class="col-12 sm:col-3 text-center scalein animation-duration-400 mt-5 px-4">
+                    <div class="card-img img-box">
+                      <img class="cover-img" src="{{artist.src}}">
+                      <div class="card-body text-center">
+                        <p class="card-text text-center">{{artist.name}}</p>
+                        <button type="button" pButton pRipple label="Choose" class="p-button-info p-button-sm"></button>
+                      </div>
+                    </div>
+                  </div>
+                </ng-template>
+                <ng-template let-artist pTemplate="gridItem">
+                  <div class="col-12 md:col-3">
+                    <div class="col-12 sm:col-3 text-center scalein animation-duration-400">
+                      <div class="card-img img-box">
+                        <img class="cover-img" src="{{artist.src}}">
+                        <div class="card-body text-center">
+                          <p class="card-text text-center">{{artist.name}}</p>
+                          <button type="button" pButton pRipple label="Choose"
+                                  class="p-button-info p-button-sm"></button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </ng-template>
+
+              </p-dataView>
+            </div>
+
+            <!--            <div class="grid mt-5">-->
+            <!--              <div class="col-12 sm:col-3 text-center scalein animation-duration-400">-->
+            <!--                <div class="card-img img-box">-->
+            <!--                  <img class="cover-img" src="assets/images/artists/ariana_grande_bg.jpg">-->
+            <!--                  <div class="card-body text-center">-->
+            <!--                    <p class="card-text text-center">Ariana Grande</p>-->
+            <!--                    <button type="button" pButton pRipple label="Choose" class="p-button-info p-button-sm"></button>-->
+            <!--                  </div>-->
+            <!--                </div>-->
+            <!--              </div>-->
+            <!--              <div class="col-12 sm:col-3 text-center scalein animation-duration-400">-->
+            <!--                <div class="card-img img-box">-->
+            <!--                  <img class="cover-img" src="assets/images/artists/justin_timberlake_bg.jpg">-->
+            <!--                  <div class="card-body text-center">-->
+            <!--                    <p class="card-text text-center">Justin Timberlake</p>-->
+            <!--                    <button type="button" pButton pRipple label="Choose" class="p-button-info p-button-sm"></button>-->
+            <!--                  </div>-->
+            <!--                </div>-->
+            <!--              </div>-->
+            <!--              <div class="col-12 sm:col-3 text-center scalein animation-duration-400">-->
+            <!--                <div class="card-img img-box">-->
+            <!--                  <img class="cover-img" src="assets/images/artists/dua_lipa_bg.jpg">-->
+            <!--                  <div class="card-body text-center">-->
+            <!--                    <p class="card-text text-center">Dua Lipa</p>-->
+            <!--                    <button type="button" pButton pRipple label="Choose" class="p-button-info p-button-sm"></button>-->
+            <!--                  </div>-->
+            <!--                </div>-->
+            <!--              </div>-->
+            <!--              <div class="col-12 sm:col-3 text-center scalein animation-duration-400">-->
+            <!--                <div class="card-img img-box">-->
+            <!--                  <img class="cover-img" src="assets/images/artists/kylie_minogue_bg.jpg">-->
+            <!--                  <div class="card-body text-center">-->
+            <!--                    <p class="card-text text-center">Kylie Minogue</p>-->
+            <!--                    <button type="button" pButton pRipple label="Choose" class="p-button-info p-button-sm"></button>-->
+            <!--                  </div>-->
+            <!--                </div>-->
+            <!--              </div>-->
+            <!--            </div>-->
+          </section>
 
         </div>
       </div>

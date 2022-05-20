@@ -2,19 +2,23 @@
   "data": [
     {
       "id": "1",
-      "name": "Ariana Grande"
+      "name": "Ariana Grande",
+      "src": "assets/images/artists/ariana_grande_bg.jpg"
     },
     {
       "id": "2",
-      "name": "Justin Timberlake"
+      "name": "Justin Timberlake",
+      "src": "assets/images/artists/justin_timberlake_bg.jpg"
     },
     {
       "id": "3",
-      "name": "Dua Lipa"
+      "name": "Dua Lipa",
+      "src": "assets/images/artists/dua_lipa_bg.jpg"
     },
     {
       "id": "4",
-      "name": "Kylie Minogue"
+      "name": "Kylie Minogue",
+      "src": "assets/images/artists/kylie_minogue_bg.jpg"
     }
   ]
 }

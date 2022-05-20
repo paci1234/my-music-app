@@ -1,0 +1,18 @@
+//Dataview - artists
+:host ::ng-deep {
+  .p-dataview {
+    .p-dataview-content,
+    .p-dataview-header,
+    .p-dataview-footer {
+      background-color: #14171a;
+      border: 0;
+    }
+    .p-dataview-content {
+      .p-grid {
+        > div {
+          border: 0;
+        }
+      }
+    }
+  }
+}

@@ -10,6 +10,7 @@ import {DataViewModule} from 'primeng/dataview';
 import {ScrollingModule} from '@angular/cdk/scrolling';
 import {ArtistsService} from './artists.service';
 import {HttpClientModule} from '@angular/common/http';
+import {DividerModule} from 'primeng/divider';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import {HttpClientModule} from '@angular/common/http';
     RippleModule,
     DataViewModule,
     ScrollingModule,
-    HttpClientModule
+    HttpClientModule,
+    DividerModule
   ],
   providers: [ArtistsService],
   bootstrap: [AppComponent]

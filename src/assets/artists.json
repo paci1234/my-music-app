@@ -19,6 +19,26 @@
       "id": "4",
       "name": "Kylie Minogue",
       "src": "assets/images/artists/kylie_minogue_bg.jpg"
+    },
+    {
+      "id": "5",
+      "name": "Miley Cyrus",
+      "src": "assets/images/artists/miley_cyrus_bg.jpg"
+    },
+    {
+      "id": "6",
+      "name": "The Weekend",
+      "src": "assets/images/artists/the_weekend_bg.jpg"
+    },
+    {
+      "id": "7",
+      "name": "Jennifer Lopez",
+      "src": "assets/images/artists/jennifer_lopez_bg.jpg"
+    },
+    {
+      "id": "8",
+      "name": "Chris Brown",
+      "src": "assets/images/artists/chris_brown_bg.jpg"
     }
   ]
 }

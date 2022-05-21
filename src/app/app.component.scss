@@ -22,6 +22,32 @@
   ang-music-player {
     .wrapper {
       width: 100%;
+      border: 1px solid #36383a;
+      padding: 30px;
+      background: none;
+      height: unset;
+      .container {
+        .details {
+          .slidecontainer {
+            .time-line {
+              color: white!important;
+            }
+          }
+          .title {
+            color: white!important;
+          }
+        }
+        .controls {
+          svg {
+            fill: white!important;
+            opacity: 1;
+            &:hover {
+              opacity: 0.7;
+              transition: all .4s;
+            }
+          }
+        }
+      }
     }
   }
 }

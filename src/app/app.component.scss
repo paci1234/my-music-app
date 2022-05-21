@@ -1,5 +1,9 @@
 //Dataview - artists
 :host ::ng-deep {
+  .p-card {
+    background: #14171a;
+    color: white;
+  }
   .p-dataview {
     .p-dataview-content,
     .p-dataview-header,
@@ -13,6 +17,11 @@
           border: 0;
         }
       }
+    }
+  }
+  ang-music-player {
+    .wrapper {
+      width: 100%;
     }
   }
 }

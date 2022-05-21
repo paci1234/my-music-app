@@ -10,11 +10,11 @@
     </div>
 
     <div class="icons">
-      <a id="search" aria-label="search" target="_blank" rel="">
+      <a id="search" aria-label="search" rel="">
         <i id="global-search" class="pi pi-search"></i>
       </a>
-      <a aria-label="player" target="_blank" rel="">
-        <i class="pi pi-play"></i>
+      <a aria-label="player" rel="">
+        <i id="player" class="pi pi-play"></i>
       </a>
       <div class="btn-group">
         <i class="pi pi-sliders-h" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false"></i>
@@ -215,6 +215,14 @@
             <!--            </div>-->
           </section>
 
+        </div>
+
+        <div class="grid mt-5" id="music-player">
+          <div class="col-6 col-offset-3">
+            <router-outlet>
+              <ang-music-player [audioList] = audioList></ang-music-player>
+            </router-outlet>
+          </div>
         </div>
       </div>
 

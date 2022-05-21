@@ -2,6 +2,7 @@ import {Component, OnInit, HostListener} from '@angular/core';
 import {PrimeNGConfig} from 'primeng/api';
 import {ArtistsService} from './artists.service';
 import {Artists} from './artists';
+import {forkJoin} from 'rxjs';
 
 declare var $: any;
 
@@ -20,6 +21,14 @@ export class AppComponent implements OnInit {
   checked = false;
   searchTerm: string;
   artists: Artists[];
+  // Music player
+  audioList = [
+    {
+      url: './assets/artists/ariana-grande/ariana_grande-no_tears_left_to_cry.mp3',
+      title: 'Ariana Grande',
+      cover: './assets/images/artists/ariana_grande_bg.jpg'
+    }
+  ];
   isReady = false;
 
   constructor(
@@ -29,6 +38,12 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
+    forkJoin(
+      this.artistsSvc.getArtists()
+    ).subscribe(res => {
+        this.artists = res[0];
+      });
+    {}
     // Jquery
     $(document).on('scroll', () => {
       if ($(window).scrollTop() > 30) {
@@ -56,6 +71,11 @@ export class AppComponent implements OnInit {
           scrollTop: $('#action-buttons').offset().top
         }, 200);
       });
+      $('#player').on('click', () => {
+        $('html, body').animate({
+          scrollTop: $('#music-player').offset().top
+        }, 200);
+      });
       $('#pick-an-artist').on('click', () => {
         $('html, body').animate({
           scrollTop: $('.album').offset().top
@@ -64,10 +84,6 @@ export class AppComponent implements OnInit {
     });
 
     this.primengConfig.ripple = true;
-    this.artistsSvc.getArtists().subscribe(items => {
-      console.log(JSON.stringify(items));
-      this.artists = items;
-    });
     this.isReady = true;
   }
 

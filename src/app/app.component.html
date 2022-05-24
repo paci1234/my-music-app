@@ -46,11 +46,7 @@
   </div>
 
   <!-- Main section -->
-
-  <!-- Header -->
   <section class="main-content">
-    <header class="text-center">
-
       <div class="container">
         <!-- Carousel -->
         <div class="full-height-headers">
@@ -92,14 +88,13 @@
             <img id="arrowDown" src="assets/images/down_arrow.webp" width="64" height="64" alt="">
           </div>
         </div>
-
         <div id="action-buttons">
+          <!-- Header-->
           <h1 class="fw-light">Music App | Powered by AngularJS and primeNG</h1>
           <hr class="mt-3">
-          <!--            <p class="lead text-muted mt-3">Choose your favorite Аrtists.</p>-->
           <p class="lead mt-3">Choose your favorite <b>Artists</b>. Listen to
             their <b>Greatest Hits</b> or just discover some cool <b>Tracks</b>.</p>
-          <p class="lead mt-3">The <b>Choice</b> is yours.
+          <p class="lead mt-3">The <b>Choice</b> is yours.</p>
           <div class="grid mt-5">
             <div class="col-6 col-offset-3">
               <button type="button" pButton pRipple label="Pick an artist" id="pick-an-artist"
@@ -109,28 +104,12 @@
             </div>
           </div>
 
+          <!-- Choose / Filter the Artist-->
           <section *ngIf="album" class="album">
-            <!--            <div class="grid mt-5">-->
-            <!--              <div class="col-4 w-full">-->
-            <!--                      <span class="p-input-icon-left">-->
-            <!--                        <i class="pi pi-search"></i>-->
-            <!--                        <input type="search scalein" pinputtext placeholder="Search by Name"-->
-            <!--                               class="p-inputtext p-component p-element w-21rem">-->
-            <!--                      </span>-->
-            <!--                <input type="text" class="form-control scalein animation-duration-200"-->
-            <!--                       placeholder="Search by Name" [(ngModel)]="searchTerm">-->
-            <!--              </div>-->
-            <!--            </div>-->
-
             <div class="card mt-5">
               <p-dataView #dv [value]="artists" filterBy="name">
                 <ng-template pTemplate="header">
                   <div class="flex justify-content-center flex-wrap card-container">
-                    <!--                    This is going to be alphabetical order dropdown list -->
-                    <!--                    <div>-->
-                    <!--                      <p-dropdown [options]="sortOptions" [(ngModel)]="sortKey" placeholder="Sort By"-->
-                    <!--                                  (onChange)="onSortChange($event)" [style]="{'min-width':'15em'}"></p-dropdown>-->
-                    <!--                    </div>-->
                     <div>
                       <span class="p-input-icon-left">
                         <i class="pi pi-search"></i>
@@ -174,124 +153,16 @@
 
               </p-dataView>
             </div>
-
-            <!--            <div class="grid mt-5">-->
-            <!--              <div class="col-12 sm:col-3 text-center scalein animation-duration-400">-->
-            <!--                <div class="card-img img-box">-->
-            <!--                  <img class="cover-img" src="assets/images/artists/ariana_grande_bg.jpg">-->
-            <!--                  <div class="card-body text-center">-->
-            <!--                    <p class="card-text text-center">Ariana Grande</p>-->
-            <!--                    <button type="button" pButton pRipple label="Choose" class="p-button-info p-button-sm"></button>-->
-            <!--                  </div>-->
-            <!--                </div>-->
-            <!--              </div>-->
-            <!--              <div class="col-12 sm:col-3 text-center scalein animation-duration-400">-->
-            <!--                <div class="card-img img-box">-->
-            <!--                  <img class="cover-img" src="assets/images/artists/justin_timberlake_bg.jpg">-->
-            <!--                  <div class="card-body text-center">-->
-            <!--                    <p class="card-text text-center">Justin Timberlake</p>-->
-            <!--                    <button type="button" pButton pRipple label="Choose" class="p-button-info p-button-sm"></button>-->
-            <!--                  </div>-->
-            <!--                </div>-->
-            <!--              </div>-->
-            <!--              <div class="col-12 sm:col-3 text-center scalein animation-duration-400">-->
-            <!--                <div class="card-img img-box">-->
-            <!--                  <img class="cover-img" src="assets/images/artists/dua_lipa_bg.jpg">-->
-            <!--                  <div class="card-body text-center">-->
-            <!--                    <p class="card-text text-center">Dua Lipa</p>-->
-            <!--                    <button type="button" pButton pRipple label="Choose" class="p-button-info p-button-sm"></button>-->
-            <!--                  </div>-->
-            <!--                </div>-->
-            <!--              </div>-->
-            <!--              <div class="col-12 sm:col-3 text-center scalein animation-duration-400">-->
-            <!--                <div class="card-img img-box">-->
-            <!--                  <img class="cover-img" src="assets/images/artists/kylie_minogue_bg.jpg">-->
-            <!--                  <div class="card-body text-center">-->
-            <!--                    <p class="card-text text-center">Kylie Minogue</p>-->
-            <!--                    <button type="button" pButton pRipple label="Choose" class="p-button-info p-button-sm"></button>-->
-            <!--                  </div>-->
-            <!--                </div>-->
-            <!--              </div>-->
-            <!--            </div>-->
           </section>
-
         </div>
 
         <div class="grid mt-5" id="music-player">
           <div class="col-12">
-            <p-card>
-              <p-panel header="Ariana Grande" [toggleable]="true">
-                <router-outlet>
-                  <div class="grid">
-                    <div class="lg:col-6 sm:col-12">
-                      <p-card header="Bio">
-                        <ng-template pTemplate="header">
-                          <img class="cover-img" src="assets/images/artists/ariana_grande/1.jpg">
-                        </ng-template>
-                        <p class="text-justify">
-                          Ariana Grande-Butera born June 26, 1993) is an American singer, songwriter, and actress. Her
-                          four-octave vocal range has received critical acclaim, and her personal life has been the
-                          subject of widespread media attention. She has received numerous accolades throughout her
-                          career, including two Grammy Awards, one Brit Award, one Bambi Award, two Billboard Music
-                          Awards, three American Music Awards, nine MTV Video Music Awards, and 27 Guinness World
-                          Records.
-                        </p>
-                      </p-card>
-                    </div>
-                    <div class="lg:col-6 sm:col-12">
-                      <p-card>
-                        <ang-music-player [audioList]=audioList></ang-music-player>
-                      </p-card>
-                      <p-card header="Greatest Hits">
-                        <div class="grid">
-                          <div class="lg:col-6 sm:col-12">
-                            <div class="text-justify">
-                              <p>01. Positions</p>
-                              <p>02. 7 Rings</p>
-                              <p>03. No Tears Lef To Cry</p>
-                              <p>04. 34 + 35</p>
-                              <p>05. Side To Side</p>
-                              <p>06. Bang Bang</p>
-                              <p>07. Problem</p>
-                              <p>08. Break Free</p>
-                              <p>09. Focus</p>
-                              <p>10. Into You</p>
-                            </div>
-                          </div>
-                          <div class="lg:col-6 sm:col-12">
-                            <div class="text-justify">
-                              <p>11. Love Me Harder</p>
-                              <p>12. Thank U. Next</p>
-                              <p>13. Dangerous Woman</p>
-                              <p>14. Beauty And The Beast</p>
-                              <p>15. The Way</p>
-                              <p>16. One Last Time</p>
-                              <p>17. God Is A Woman</p>
-                              <p>18. Rain On Me</p>
-                              <p>19. Let Me Love You</p>
-                              <p>20. Break Up With Your Girlfriend</p>
-                            </div>
-                          </div>
-                        </div>
-                        <ng-template pTemplate="footer">
-                          <p-button label="Save to your Playlist" icon="pi pi-check"></p-button>
-                        </ng-template>
-                      </p-card>
-                    </div>
-                  </div>
-                </router-outlet>
-              </p-panel>
-            </p-card>
+            <app-player-card></app-player-card>
           </div>
         </div>
       </div>
-
-
-    </header>
-
-
   </section>
-
   <!-- End of Main section -->
 
   <!-- Footer -->
@@ -302,9 +173,6 @@
         <a href="https://www.facebook.com/profile.php?id=1002003666" class="me-3 text-reset" target="_blank">
           <i class="pi pi-facebook"></i>
         </a>
-        <!--        <a href="" class="me-3 text-reset">-->
-        <!--          <i class="fa fa-twitter"></i>-->
-        <!--        </a>-->
         <a href="https://www.youtube.com/c/PlamenPetrovPacistyleCom/videos" class="me-3 text-reset" target="_blank">
           <i class="pi pi-youtube"></i>
         </a>

@@ -16,11 +16,13 @@ import { MusicPlayerComponent } from './components/music-player/music-player.com
 import {CardModule} from 'primeng/card';
 import {RouterModule} from '@angular/router';
 import {PanelModule} from 'primeng/panel';
+import { PlayerCardComponent } from './components/player-card/player-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MusicPlayerComponent
+    MusicPlayerComponent,
+    PlayerCardComponent
   ],
   imports: [
     RouterModule.forRoot([]),

@@ -1,0 +1,68 @@
+<p-card>
+  <p-panel header="Ariana Grande" [toggleable]="true">
+    <router-outlet>
+      <div class="grid">
+        <div class="lg:col-6 sm:col-12">
+          <p-card header="Bio">
+            <ng-template pTemplate="header">
+              <img class="cover-img" src="assets/images/artists/ariana_grande/1.jpg">
+            </ng-template>
+            <p class="text-justify">
+              Ariana Grande-Butera born June 26, 1993) is an American singer, songwriter, and actress. Her
+              four-octave vocal range has received critical acclaim, and her personal life has been the
+              subject of widespread media attention. She has received numerous accolades throughout her
+              career, including two Grammy Awards, one Brit Award, one Bambi Award, two Billboard Music
+              Awards, three American Music Awards, nine MTV Video Music Awards, and 27 Guinness World
+              Records.
+            </p>
+          </p-card>
+        </div>
+        <div class="lg:col-6 sm:col-12">
+          <p-card header="Greatest Hits">
+            <ng-template pTemplate="header">
+              <ang-music-player [audioList]=audioList></ang-music-player>
+            </ng-template>
+            <div class="grid">
+              <div class="lg:col-6 sm:col-12">
+                <div class="text-justify">
+                  <p>01. Positions</p>
+                  <p>02. 7 Rings</p>
+                  <p>03. No Tears Lef To Cry</p>
+                  <p>04. 34 + 35</p>
+                  <p>05. Side To Side</p>
+                  <p>06. Bang Bang</p>
+                  <p>07. Problem</p>
+                  <p>08. Break Free</p>
+                  <p>09. Focus</p>
+                  <p>10. Into You</p>
+                </div>
+              </div>
+              <div class="lg:col-6 sm:col-12">
+                <div class="text-justify">
+                  <p>11. Love Me Harder</p>
+                  <p>12. Thank U. Next</p>
+                  <p>13. Dangerous Woman</p>
+                  <p>14. Beauty And The Beast</p>
+                  <p>15. The Way</p>
+                  <p>16. One Last Time</p>
+                  <p>17. God Is A Woman</p>
+                  <p>18. Rain On Me</p>
+                  <p>19. Let Me Love You</p>
+                  <p>20. Break Up With Your Girlfriend</p>
+                </div>
+              </div>
+            </div>
+<!--            <ng-template pTemplate="footer">-->
+<!--              <p-button label="Save to your Playlist" icon="pi pi-check"></p-button>-->
+<!--            </ng-template>-->
+          </p-card>
+        </div>
+      </div>
+    </router-outlet>
+    <div class="grid">
+      <div class="col-12 align-content-center">
+        <p-button label="Save to your Playlist" icon="pi pi-check"></p-button>
+      </div>
+    </div>
+  </p-panel>
+</p-card>

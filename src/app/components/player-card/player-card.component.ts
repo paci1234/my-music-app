@@ -13,6 +13,7 @@ export class PlayerCardComponent implements OnInit {
   name: any;
   src: any;
   bio: any;
+  arianaGrande: any;
   audioList = [
     {
       url: './assets/artists/ariana-grande/ariana_grande-no_tears_left_to_cry.mp3',
@@ -29,9 +30,10 @@ export class PlayerCardComponent implements OnInit {
       this.artistsSvc.getArtists()
     ).subscribe(res => {
       this.artists = res[0];
-      this.name = this.artists[0].name;
-      this.src = this.artists[0].src;
-      this.bio = this.artists[0].bio;
+      this.arianaGrande = res[0][0];
+      this.name = this.arianaGrande.name;
+      this.src = this.arianaGrande.src;
+      this.bio = this.arianaGrande.bio;
     });
   }
 

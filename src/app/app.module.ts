@@ -15,6 +15,7 @@ import {AngMusicPlayerModule} from 'ang-music-player';
 import { MusicPlayerComponent } from './components/music-player/music-player.component';
 import {CardModule} from 'primeng/card';
 import {RouterModule} from '@angular/router';
+import {PanelModule} from 'primeng/panel';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import {RouterModule} from '@angular/router';
     HttpClientModule,
     DividerModule,
     AngMusicPlayerModule,
-    CardModule
+    CardModule,
+    PanelModule
   ],
   providers: [ArtistsService],
   bootstrap: [AppComponent]

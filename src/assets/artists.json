@@ -3,42 +3,50 @@
     {
       "id": "1",
       "name": "Ariana Grande",
-      "src": "assets/images/artists/ariana_grande_bg.jpg"
+      "src": "assets/images/artists/ariana_grande_bg.jpg",
+      "bio": "Ariana Grande-Butera born June 26, 1993) is an American singer, songwriter, and actress. Her four-octave vocal range has received critical acclaim, and her personal life has been the subject of widespread media attention. She has received numerous accolades throughout her career, including two Grammy Awards, one Brit Award, one Bambi Award, two Billboard Music Awards, three American Music Awards, nine MTV Video Music Awards, and 27 Guinness World Records."
     },
     {
       "id": "2",
       "name": "Justin Timberlake",
-      "src": "assets/images/artists/justin_timberlake_bg.jpg"
+      "src": "assets/images/artists/justin_timberlake_bg.jpg",
+      "bio": "Justin Randall Timberlake (born January 31, 1981) is an American singer, songwriter, record producer, and actor.[2] He is one of the world's best-selling music artists, with sales of over 88 million records. Timberlake is the recipient of numerous awards and accolades, including ten Grammy Awards, four Primetime Emmy Awards, three Brit Awards, nine Billboard Music Awards, the Contemporary Icon Award by the Songwriters Hall of Fame, and the Michael Jackson Video Vanguard Award. According to Billboard, he is the best performing male soloist in the history of the Mainstream Top 40."
     },
     {
       "id": "3",
       "name": "Dua Lipa",
-      "src": "assets/images/artists/dua_lipa_bg.jpg"
+      "src": "assets/images/artists/dua_lipa_bg.jpg",
+      "bio": "Dua Lipa (born 22 August 1995) is an English singer and songwriter. Possessing a mezzo-soprano vocal range, she is known for her signature disco-pop sound. Lipa has received numerous accolades, including six Brit Awards, three Grammy Awards, two MTV Europe Music Awards, an MTV Video Music Award, two Billboard Music Awards, an American Music Award, and two Guinness World Records."
     },
     {
       "id": "4",
       "name": "Kylie Minogue",
-      "src": "assets/images/artists/kylie_minogue_bg.jpg"
+      "src": "assets/images/artists/kylie_minogue_bg.jpg",
+      "bio": "Kylie Ann Minogue (born 28 May 1968), sometimes known mononymously as Kylie, is an Australian singer, songwriter and actress who holds both Australian and British citizenship.[5] She is the highest-selling female Australian artist of all time, having sold over 80 million records worldwide.[6] She has been recognised for reinventing herself in music and fashion, for which she is referred to by the European press as the \"Princess of Pop\" and a style icon. Her accolades include a Grammy Award, three Brit Awards and 17 ARIA Music Awards."
     },
     {
       "id": "5",
       "name": "Miley Cyrus",
-      "src": "assets/images/artists/miley_cyrus_bg.jpg"
+      "src": "assets/images/artists/miley_cyrus_bg.jpg",
+      "bio": "Miley Ray Cyrus (born Destiny Hope Cyrus, November 23, 1992) is an American singer, songwriter, actress, and television personality. Known for her distinctive raspy voice,[2][3] her music incorporates elements of varied styles and genres, including pop, country pop, hip hop, experimental, and rock. She has attained the most US Billboard 200 top-five albums in the 21st century by a female artist, with a total of thirteen entries."
     },
     {
       "id": "6",
       "name": "The Weekend",
-      "src": "assets/images/artists/the_weekend_bg.jpg"
+      "src": "assets/images/artists/the_weekend_bg.jpg",
+      "bio": "Abel Makkonen Tesfaye (born February 16, 1990), known professionally as the Weeknd, is a Canadian singer-songwriter and record producer.[2] Known for his sonic versatility and dark lyricism, his music explores escapism, romance, and melancholia, and is often inspired by personal experiences.[3] He has received numerous accolades, including four Grammy Awards, 20 Billboard Music Awards, 17 Juno Awards, six American Music Awards, two MTV Video Music Awards, and nominations for an Academy Award, a Latin Grammy Award, and a Primetime Emmy Award."
     },
     {
       "id": "7",
       "name": "Jennifer Lopez",
-      "src": "assets/images/artists/jennifer_lopez_bg.jpg"
+      "src": "assets/images/artists/jennifer_lopez_bg.jpg",
+      "bio": "Jennifer Lynn Lopez (born July 24, 1969), also known as J.Lo, is an American singer, actress, and dancer. In 1991, she began appearing as a Fly Girl dancer on In Living Color, where she remained a regular until she decided to pursue an acting career in 1993. For her first leading role in Selena (1997), she became the first Latin actress to earn over US$1 million for a film. She went on to star in Anaconda (1997) and Out of Sight (1998), and established herself as the highest-paid Latin actress in Hollywood."
     },
     {
       "id": "8",
       "name": "Chris Brown",
-      "src": "assets/images/artists/chris_brown_bg.jpg"
+      "src": "assets/images/artists/chris_brown_bg.jpg",
+      "bio": "Christopher Maurice Brown (born May 5, 1989) is an American singer, songwriter, dancer, graffiti artist and actor. According to Billboard, Brown is one of the most influential and successful R&B singers ever, with several considering him the \"King of R&B\" alongside Usher and R. Kelly."
     }
   ]
 }

@@ -1,19 +1,14 @@
 <p-card>
-  <p-panel header="Ariana Grande" [toggleable]="true">
+  <p-panel header="{{name}}" [toggleable]="true" toggleable>
     <router-outlet>
       <div class="grid">
         <div class="lg:col-6 sm:col-12">
           <p-card header="Bio">
             <ng-template pTemplate="header">
-              <img class="cover-img" src="assets/images/artists/ariana_grande/1.jpg">
+              <img class="cover-img" src="{{src}}">
             </ng-template>
             <p class="text-justify">
-              Ariana Grande-Butera born June 26, 1993) is an American singer, songwriter, and actress. Her
-              four-octave vocal range has received critical acclaim, and her personal life has been the
-              subject of widespread media attention. She has received numerous accolades throughout her
-              career, including two Grammy Awards, one Brit Award, one Bambi Award, two Billboard Music
-              Awards, three American Music Awards, nine MTV Video Music Awards, and 27 Guinness World
-              Records.
+              {{bio}}
             </p>
           </p-card>
         </div>

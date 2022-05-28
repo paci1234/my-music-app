@@ -1,5 +1,11 @@
+html {
+  scroll-behavior: smooth;
+}
 body {
-  background: #14171a;
+  background: transparent url('/assets/images/bg-image.jpg');
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
 }
 
 ///* Colors */
@@ -41,7 +47,7 @@ hr {
 }
 
 .card {
-  background: #0d6efd;
+  background: transparent;
   border: 0;
 }
 
@@ -50,13 +56,11 @@ hr {
 }
 
 .full-height-headers {
-  height: 760px;
+  height: 100vh;
 }
 
 #action-buttons {
-  height: 100%;
-  min-height: 600px;
-  top: 0;
+
 }
 
 section, header {
@@ -151,15 +155,9 @@ section, header {
 
 section {
   overflow-x: hidden;
-
   &.main-content {
-    height: 100%;
-    min-height: 100%;
-    margin-bottom: 90px;
+    //margin-bottom: 90px;
     text-align: center;
-    background: url('/assets/images/bg-image.jpg');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
     header {
       color: white;
     }
@@ -212,10 +210,8 @@ section {
 
 footer {
   text-align: center;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-
+  margin-top: 40px;
+  padding: 10px 0;
   .social {
     a {
       i {

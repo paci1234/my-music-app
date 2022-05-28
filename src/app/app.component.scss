@@ -3,6 +3,9 @@
   .p-card {
     background: #14171a;
     color: white;
+    .p-card-content {
+      padding: 0;
+    }
   }
   .p-panel {
     .p-panel-header {
@@ -50,7 +53,7 @@
     .p-dataview-content,
     .p-dataview-header,
     .p-dataview-footer {
-      background-color: #14171a;
+      background-color: transparent;
       border: 0;
     }
     .p-dataview-content {

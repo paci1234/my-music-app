@@ -15,6 +15,7 @@ declare var $: any;
 export class AppComponent implements OnInit {
   public title = 'MY MUSIC APP';
   album = false;
+  musicPlayer = false;
   isBottom: boolean;
   lightColor: any = 'white';
   darkColor: any = 'black';
@@ -76,6 +77,11 @@ export class AppComponent implements OnInit {
           scrollTop: $('#music-player').offset().top
         }, 200);
       });
+      $('#scrollToMusicPlayer').on('click', () => {
+        $('html, body').animate({
+          scrollTop: $('#music-player').offset().top
+        }, 200);
+      });
       $('#pick-an-artist').on('click', () => {
         $('html, body').animate({
           scrollTop: $('.album').offset().top
@@ -89,6 +95,10 @@ export class AppComponent implements OnInit {
 
   openAlbum() {
     this.album = !this.album;
+  }
+
+  openMusicPlayer() {
+    this.musicPlayer = !this.musicPlayer;
   }
 
   // @HostListener('window:scroll', [])

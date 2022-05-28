@@ -47,47 +47,48 @@
 
   <!-- Main section -->
   <section class="main-content">
-    <div class="container">
-      <!-- Carousel -->
-      <div class="full-height-headers">
-        <div id="demo" class="carousel slide mt-5" data-bs-ride="carousel">
+    <!-- Carousel -->
+    <div class="full-height-headers">
+      <div id="demo" class="carousel slide mt-5" data-bs-ride="carousel">
 
-          <!-- Indicators/dots -->
-          <div class="carousel-indicators">
-            <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
-            <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
-            <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
-            <button type="button" data-bs-target="#demo" data-bs-slide-to="3"></button>
-          </div>
-
-          <!-- The slideshow/carousel -->
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src="assets/images/carousel/1.jpg" alt="" class="d-block w-100">
-            </div>
-            <div class="carousel-item">
-              <img src="assets/images/carousel/2.jpg" alt="" class="d-block w-100">
-            </div>
-            <div class="carousel-item">
-              <img src="assets/images/carousel/3.jpg" alt="" class="d-block w-100">
-            </div>
-            <div class="carousel-item">
-              <img src="assets/images/carousel/5.jpg" alt="" class="d-block w-100">
-            </div>
-          </div>
-
-          <!-- Left and right controls/icons -->
-          <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon"></span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
-            <span class="carousel-control-next-icon"></span>
-          </button>
+        <!-- Indicators/dots -->
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+          <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+          <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+          <button type="button" data-bs-target="#demo" data-bs-slide-to="3"></button>
         </div>
-        <div class="text-center mt-5">
-          <img id="arrowDown" src="assets/images/down_arrow.webp" width="64" height="64" alt="">
+
+        <!-- The slideshow/carousel -->
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="assets/images/carousel/1.jpg" alt="" class="d-block w-100">
+          </div>
+          <div class="carousel-item">
+            <img src="assets/images/carousel/2.jpg" alt="" class="d-block w-100">
+          </div>
+          <div class="carousel-item">
+            <img src="assets/images/carousel/3.jpg" alt="" class="d-block w-100">
+          </div>
+          <div class="carousel-item">
+            <img src="assets/images/carousel/5.jpg" alt="" class="d-block w-100">
+          </div>
         </div>
+
+        <!-- Left and right controls/icons -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
       </div>
+      <div class="text-center mt-5">
+        <img id="arrowDown" src="assets/images/down_arrow.webp" width="64" height="64" alt="">
+      </div>
+    </div>
+    <div class="container">
+
       <div id="action-buttons">
         <!-- Header-->
         <h1 class="fw-light">Music App | Powered by AngularJS and primeNG</h1>
@@ -106,7 +107,7 @@
 
         <!-- Choose / Filter the Artist-->
         <div *ngIf="album" class="album mt-5">
-          <p-card>
+          <p-panel header="List of Artists" [toggleable]="true" class="player-card" toggleable>
             <p-dataView #dv [value]="artists" filterBy="name">
               <ng-template pTemplate="header">
                 <div class="flex justify-content-center flex-wrap card-container">
@@ -143,8 +144,12 @@
                       <img class="cover-img" src="{{artist.src}}">
                       <div class="card-body text-center">
                         <p class="card-text text-center">{{artist.name}}</p>
-                        <button type="button" pButton pRipple label="Choose"
-                                class="p-button-info p-button-sm"></button>
+                        <button type="button"
+                                pButton pRipple label="Choose"
+                                class="p-button-info p-button-sm"
+                                id="scrollToMusicPlayer"
+                                (click)="openMusicPlayer()">
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -152,12 +157,12 @@
               </ng-template>
 
             </p-dataView>
-          </p-card>
+          </p-panel>
         </div>
 
       </div>
 
-      <div class="grid mt-5" id="music-player">
+      <div *ngIf="musicPlayer" class="grid mt-5" id="music-player">
         <div class="col-12">
           <app-player-card></app-player-card>
         </div>

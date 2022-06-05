@@ -57,13 +57,15 @@ hr {
   }
 }
 
-#arrowDown {
-  cursor: pointer;
+.full-height-headers {
+  position: relative;
 }
 
-//.full-height-headers {
-//  height: 100vh;
-//}
+#arrowDown {
+  position: absolute;
+  bottom: 50px;
+  cursor: pointer;
+}
 
 section, header {
   color: white;
@@ -165,6 +167,7 @@ section {
     }
 
     .album {
+      min-height: 100vh;
       .card-img {
         border: none;
         position: relative;

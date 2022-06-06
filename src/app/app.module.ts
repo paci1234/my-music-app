@@ -39,7 +39,7 @@ import { PlayerCardComponent } from './components/player-card/player-card.compon
     CardModule,
     PanelModule
   ],
-  providers: [ArtistsService],
+  providers: [ArtistsService, PlayerCardComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

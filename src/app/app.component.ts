@@ -1,8 +1,9 @@
-import {Component, OnInit, HostListener} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {PrimeNGConfig} from 'primeng/api';
 import {ArtistsService} from './artists.service';
 import {Artists} from './artists';
 import {forkJoin} from 'rxjs';
+import {PlayerCardComponent} from './components/player-card/player-card.component';
 
 declare var $: any;
 
@@ -13,6 +14,13 @@ declare var $: any;
 })
 
 export class AppComponent implements OnInit {
+
+  constructor(
+    private primengConfig: PrimeNGConfig,
+    private artistsSvc: ArtistsService,
+    private playerCardComp: PlayerCardComponent
+  ) {
+  }
   public title = 'MY MUSIC APP';
   album = false;
   musicPlayer = false;
@@ -22,27 +30,15 @@ export class AppComponent implements OnInit {
   checked = false;
   searchTerm: string;
   artists: Artists[];
-  // Music player
-  audioList = [
-    {
-      url: './assets/artists/ariana-grande/ariana_grande-no_tears_left_to_cry.mp3',
-      title: 'Ariana Grande',
-      cover: './assets/images/artists/ariana_grande_bg.jpg'
-    }
-  ];
+  artistId: any;
   isReady = false;
-
-  constructor(
-    private primengConfig: PrimeNGConfig,
-    private artistsSvc: ArtistsService
-  ) {
-  }
 
   ngOnInit() {
     forkJoin(
       this.artistsSvc.getArtists()
     ).subscribe(res => {
         this.artists = res[0];
+        this.artistId = this.artists;
       });
     {}
     // Jquery
@@ -77,7 +73,7 @@ export class AppComponent implements OnInit {
           scrollTop: $('#music-player').offset().top
         }, 200);
       });
-      $('#scrollToMusicPlayer').on('click', () => {
+      $('.scrollToMusicPlayer').on('click', () => {
         $('html, body').animate({
           scrollTop: $('#music-player').offset().top
         }, 200);
@@ -97,8 +93,8 @@ export class AppComponent implements OnInit {
     this.album = !this.album;
   }
 
-  openMusicPlayer() {
-    this.musicPlayer = !this.musicPlayer;
+  openPlayer() {
+    this.playerCardComp.openMusicPlayer();
   }
 
   // @HostListener('window:scroll', [])

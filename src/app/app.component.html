@@ -91,7 +91,7 @@
     </div>
     <div class="container">
 
-      <div id="action-buttons">
+      <div id="action-buttons" class="mt-5">
         <!-- Header-->
         <h1 class="fw-light">Music App | Powered by AngularJS and primeNG</h1>
         <hr class="mt-3">
@@ -134,29 +134,34 @@
                     <img class="cover-img" src="{{artist.src}}">
                     <div class="card-body text-center">
                       <p class="card-text text-center">{{artist.name}}</p>
-                      <button type="button" pButton pRipple label="Choose" class="p-button-info p-button-sm"></button>
+                      <button type="button"
+                              pButton pRipple
+                              label="Choose"
+                              class="scrollToMusicPlayer"
+                              (click)="openPlayer()"
+                              class="p-button-info p-button-sm">
+                      </button>
                     </div>
                   </div>
                 </div>
               </ng-template>
-              <ng-template let-artist pTemplate="gridItem">
-                <div class="col-12 md:col-3">
-                  <div class="col-12 sm:col-3 text-center scalein animation-duration-400">
-                    <div class="card-img img-box">
-                      <img class="cover-img" src="{{artist.src}}">
-                      <div class="card-body text-center">
-                        <p class="card-text text-center">{{artist.name}}</p>
-                        <button type="button"
-                                pButton pRipple label="Choose"
-                                class="p-button-info p-button-sm"
-                                id="scrollToMusicPlayer"
-                                (click)="openMusicPlayer()">
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </ng-template>
+<!--              <ng-template let-artist pTemplate="gridItem">-->
+<!--                <div class="col-12 md:col-3">-->
+<!--                  <div class="col-12 sm:col-3 text-center scalein animation-duration-400">-->
+<!--                    <div class="card-img img-box">-->
+<!--                      <img class="cover-img" src="{{artist.src}}">-->
+<!--                      <div class="card-body text-center">-->
+<!--                        <p class="card-text text-center">{{artist.name}}</p>-->
+<!--                        <button type="button"-->
+<!--                                pButton pRipple label="Choose"-->
+<!--                                class="p-button-info p-button-sm"-->
+<!--                                class="scrollToMusicPlayer">-->
+<!--                        </button>-->
+<!--                      </div>-->
+<!--                    </div>-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--              </ng-template>-->
 
             </p-dataView>
           </p-panel>
@@ -164,7 +169,7 @@
 
       </div>
 
-      <div *ngIf="musicPlayer" class="grid mt-5" id="music-player">
+      <div class="grid mt-5" id="music-player">
         <div class="col-12">
           <app-player-card></app-player-card>
         </div>

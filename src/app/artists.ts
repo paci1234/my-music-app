@@ -3,6 +3,7 @@ export interface Artists {
   name: string;
   src: string;
   bio: string;
+  greatestHits: string;
 }
 
 export interface ArtistsDTO {

@@ -1,8 +1,8 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {PrimeNGConfig} from 'primeng/api';
 import {ArtistsService} from './artists.service';
 import {Artists} from './artists';
-import {forkJoin} from 'rxjs';
+import {forkJoin, Subscription} from 'rxjs';
 import {PlayerCardComponent} from './components/player-card/player-card.component';
 
 declare var $: any;
@@ -13,7 +13,7 @@ declare var $: any;
   styleUrls: ['./app.component.scss']
 })
 
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, OnDestroy {
 
   constructor(
     private primengConfig: PrimeNGConfig,
@@ -23,6 +23,7 @@ export class AppComponent implements OnInit {
   }
   public title = 'MY MUSIC APP';
   album = false;
+  sub: Subscription;
   musicPlayer = false;
   isBottom: boolean;
   lightColor: any = 'white';
@@ -30,7 +31,7 @@ export class AppComponent implements OnInit {
   checked = false;
   searchTerm: string;
   artists: Artists[];
-  artistId: any;
+  artistName: any;
   isReady = false;
 
   ngOnInit() {
@@ -38,7 +39,9 @@ export class AppComponent implements OnInit {
       this.artistsSvc.getArtists()
     ).subscribe(res => {
         this.artists = res[0];
-        this.artistId = this.artists;
+        this.artistName = this.artists.filter( x => {
+          return x.name;
+        });
       });
     {}
     // Jquery
@@ -60,27 +63,27 @@ export class AppComponent implements OnInit {
       });
       $('#arrowDown').on('click', () => {
         $('html, body').animate({
-          scrollTop: $('#action-buttons').offset().top
+          scrollTop: $('#action-buttons').offset().top - 50 + 'px'
         }, 200);
       });
       $('#global-search').on('click', () => {
         $('html, body').animate({
-          scrollTop: $('#action-buttons').offset().top
+          scrollTop: $('#action-buttons').offset().top - 50 + 'px'
         }, 200);
       });
       $('#player').on('click', () => {
         $('html, body').animate({
-          scrollTop: $('#music-player').offset().top
+          scrollTop: $('#music-player').offset().top - 50 + 'px'
         }, 200);
       });
-      $('.scrollToMusicPlayer').on('click', () => {
+      $('.album p-panel p-dataView ng-template button#scrollToMusicPlayer').on('click', () => {
         $('html, body').animate({
-          scrollTop: $('#music-player').offset().top
+          scrollTop: $('#music-player').offset().top - 50 + 'px'
         }, 200);
       });
       $('#pick-an-artist').on('click', () => {
         $('html, body').animate({
-          scrollTop: $('.album').offset().top
+          scrollTop: $('.album').offset().top - 50 + 'px'
         }, 200);
       });
     });
@@ -105,6 +108,10 @@ export class AppComponent implements OnInit {
   //     this.isBottom = false;
   //   }
   // }
+
+  ngOnDestroy() {
+    this.sub.unsubscribe();
+  }
 
   changeTheme() {
   }

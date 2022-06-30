@@ -1,15 +1,18 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ArtistsService} from '../../artists.service';
 import {Artists} from '../../artists';
-import {forkJoin} from 'rxjs';
+import {Subscription} from 'rxjs';
 
 @Component({
   selector: 'app-player-card',
   templateUrl: './player-card.component.html',
   styleUrls: ['./player-card.component.scss']
 })
-export class PlayerCardComponent implements OnInit {
-  artists: Artists[];
+export class PlayerCardComponent implements OnInit, OnDestroy {
+  artists: Artists[] = [];
+  filteredArtists: Artists[] = [];
+  errorMessage = '';
+  sub: Subscription;
   name: any;
   src: any;
   bio: any;
@@ -32,34 +35,35 @@ export class PlayerCardComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    forkJoin(
-      this.artistsSvc.getArtists()
-    ).subscribe(res => {
+      this.sub = this.artistsSvc.getArtists().subscribe(
+        artists => {
+          this.artists = artists;
+          this.filteredArtists = this.artists;
+        },
+        err => this.errorMessage = err
+      // this.arianaGrande = artists[0][0];
+      // this.name = this.arianaGrande.name;
+      // this.src = this.arianaGrande.src;
+      // this.bio = this.arianaGrande.bio;
+      // this.greatestHits = this.arianaGrande.greatestHits;
+    );
+  }
 
-      this.artists = res[0];
-      this.arianaGrande = res[0][0];
-      this.name = this.arianaGrande.name;
-      this.src = this.arianaGrande.src;
-      this.bio = this.arianaGrande.bio;
-      this.greatestHits = this.arianaGrande.greatestHits;
+  openMusicPlayer() {
+    console.log('Passed through the openMusicPlayer function');
+    this.filteredArtists.filter((x) => {
+      if (x.name === 'Ariana Grande') {
+        x.name = this.name;
+        // this.src = x.src;
+        // this.bio = x.bio;
+        // this.greatestHits = x.greatestHits;
+      }
+      return this.name;
     });
   }
 
-openMusicPlayer() {
-    this.artists.filter((x) => {
-      if (x.name === 'Ariana Grande') {
-        this.name = x.name;
-        this.src = x.src;
-        this.bio = x.bio;
-        this.greatestHits = x.greatestHits;
-      }
-      if (x.name === 'Justin Timberlake') {
-        this.name = x.name;
-        this.src = x.src;
-        this.bio = x.bio;
-        this.greatestHits = x.greatestHits;
-      }
-    });
+  ngOnDestroy() {
+    this.sub.unsubscribe();
   }
 
 }

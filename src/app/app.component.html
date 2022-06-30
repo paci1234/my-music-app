@@ -110,7 +110,7 @@
         <!-- Choose / Filter the Artist-->
         <div *ngIf="album" class="album mt-5">
           <p-panel header="List of Artists" [toggleable]="true" class="player-card" toggleable>
-            <p-dataView #dv [value]="artists" filterBy="name">
+            <p-dataView #dv [value]="artists" filterBy="name" [paginator]="true" [rows]="4">
               <ng-template pTemplate="header">
                 <div class="flex justify-content-center flex-wrap card-container">
                   <div>
@@ -137,7 +137,7 @@
                       <button type="button"
                               pButton pRipple
                               label="Choose"
-                              class="scrollToMusicPlayer"
+                              id="scrollToMusicPlayer"
                               (click)="openPlayer()"
                               class="p-button-info p-button-sm">
                       </button>
@@ -169,7 +169,7 @@
 
       </div>
 
-      <div class="grid mt-5" id="music-player">
+      <div *ngIf="album" class="grid mt-5" id="music-player">
         <div class="col-12">
           <app-player-card></app-player-card>
         </div>

@@ -68,7 +68,7 @@ export class AppComponent implements OnInit, OnDestroy {
       });
       $('#global-search').on('click', () => {
         $('html, body').animate({
-          scrollTop: $('#action-buttons').offset().top - 50 + 'px'
+          scrollTop: $('.album').offset().top - 50 + 'px'
         }, 200);
       });
       $('#player').on('click', () => {
@@ -84,6 +84,11 @@ export class AppComponent implements OnInit, OnDestroy {
       $('#pick-an-artist').on('click', () => {
         $('html, body').animate({
           scrollTop: $('.album').offset().top - 50 + 'px'
+        }, 200);
+      });
+      $('#myMusicAppTitle').on('click', () => {
+        $('html, body').animate({
+          scrollTop: $('body').offset().top
         }, 200);
       });
     });

@@ -138,7 +138,7 @@
                               pButton pRipple
                               label="Choose"
                               id="scrollToMusicPlayer"
-                              (click)="openPlayer()"
+                              (click)="openPlayer(artist)"
                               class="p-button-info p-button-sm">
                       </button>
                     </div>
@@ -169,9 +169,9 @@
 
       </div>
 
-      <div *ngIf="album" class="grid mt-5" id="music-player">
+      <div *ngIf="currentArtist" class="grid mt-5" id="music-player">
         <div class="col-12">
-          <app-player-card></app-player-card>
+          <app-player-card [artist]="currentArtist"></app-player-card>
         </div>
       </div>
 

@@ -1,13 +1,13 @@
-<p-panel header="You chose: {{name}}" [toggleable]="true" class="player-card" toggleable>
+<p-panel header="You chose: {{artist.name}}" [toggleable]="true" class="player-card" toggleable>
     <router-outlet>
       <div class="grid">
         <div class="lg:col-6 sm:col-12">
           <p-card header="Bio">
             <ng-template pTemplate="header">
-              <img class="cover-img" src="{{src}}">
+              <img class="cover-img" src="{{artist.src}}">
             </ng-template>
             <p class="text-justify">
-              {{bio}}
+              {{artist.bio}}
             </p>
           </p-card>
         </div>

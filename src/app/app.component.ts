@@ -22,6 +22,7 @@ export class AppComponent implements OnInit, OnDestroy {
   ) {
   }
   public title = 'MY MUSIC APP';
+  public currentArtist: Artists;
   album = false;
   sub: Subscription;
   musicPlayer = false;
@@ -77,6 +78,7 @@ export class AppComponent implements OnInit, OnDestroy {
         }, 200);
       });
       $('#scrollToMusicPlayer').on('click', () => {
+        console.log('triggered');
         $('html, body').animate({
           scrollTop: $('#music-player').offset().top - 50 + 'px'
         }, 200);
@@ -101,8 +103,10 @@ export class AppComponent implements OnInit, OnDestroy {
     this.album = !this.album;
   }
 
-  openPlayer() {
-    this.playerCardComp.openMusicPlayer();
+  openPlayer(artist) {
+    console.log(artist);
+    this.currentArtist = artist;
+    // this.playerCardComp.openMusicPlayer();
   }
 
   // @HostListener('window:scroll', [])

@@ -1,4 +1,4 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, Input, OnDestroy, OnInit} from '@angular/core';
 import {ArtistsService} from '../../artists.service';
 import {Artists} from '../../artists';
 import {Subscription} from 'rxjs';
@@ -11,6 +11,7 @@ import {Subscription} from 'rxjs';
 export class PlayerCardComponent implements OnInit, OnDestroy {
   artists: Artists[] = [];
   filteredArtists: Artists[] = [];
+  @Input() artist: Artists;
   errorMessage = '';
   sub: Subscription;
   name: any;

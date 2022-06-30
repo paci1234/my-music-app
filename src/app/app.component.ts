@@ -76,7 +76,7 @@ export class AppComponent implements OnInit, OnDestroy {
           scrollTop: $('#music-player').offset().top - 50 + 'px'
         }, 200);
       });
-      $('.album p-panel p-dataView ng-template button#scrollToMusicPlayer').on('click', () => {
+      $('#scrollToMusicPlayer').on('click', () => {
         $('html, body').animate({
           scrollTop: $('#music-player').offset().top - 50 + 'px'
         }, 200);

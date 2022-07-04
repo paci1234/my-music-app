@@ -3,7 +3,6 @@ import {PrimeNGConfig} from 'primeng/api';
 import {ArtistsService} from './artists.service';
 import {Artists} from './artists';
 import {forkJoin, Subscription} from 'rxjs';
-import {PlayerCardComponent} from './components/player-card/player-card.component';
 
 declare var $: any;
 
@@ -17,12 +16,13 @@ export class AppComponent implements OnInit, OnDestroy {
 
   constructor(
     private primengConfig: PrimeNGConfig,
-    private artistsSvc: ArtistsService,
-    private playerCardComp: PlayerCardComponent
+    private artistsSvc: ArtistsService
   ) {
   }
   public title = 'MY MUSIC APP';
   public currentArtist: Artists;
+  public currentAudioList: Artists;
+  public currentHits: Artists;
   album = false;
   sub: Subscription;
   musicPlayer = false;
@@ -40,11 +40,7 @@ export class AppComponent implements OnInit, OnDestroy {
       this.artistsSvc.getArtists()
     ).subscribe(res => {
         this.artists = res[0];
-        this.artistName = this.artists.filter( x => {
-          return x.name;
-        });
       });
-    {}
     // Jquery
     $(document).on('scroll', () => {
       if ($(window).scrollTop() > 30) {
@@ -104,9 +100,9 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   openPlayer(artist) {
-    console.log(artist);
     this.currentArtist = artist;
-    // this.playerCardComp.openMusicPlayer();
+    this.currentAudioList = artist;
+    this.currentHits = artist;
   }
 
   // @HostListener('window:scroll', [])

@@ -145,36 +145,21 @@
                   </div>
                 </div>
               </ng-template>
-<!--              <ng-template let-artist pTemplate="gridItem">-->
-<!--                <div class="col-12 md:col-3">-->
-<!--                  <div class="col-12 sm:col-3 text-center scalein animation-duration-400">-->
-<!--                    <div class="card-img img-box">-->
-<!--                      <img class="cover-img" src="{{artist.src}}">-->
-<!--                      <div class="card-body text-center">-->
-<!--                        <p class="card-text text-center">{{artist.name}}</p>-->
-<!--                        <button type="button"-->
-<!--                                pButton pRipple label="Choose"-->
-<!--                                class="p-button-info p-button-sm"-->
-<!--                                class="scrollToMusicPlayer">-->
-<!--                        </button>-->
-<!--                      </div>-->
-<!--                    </div>-->
-<!--                  </div>-->
-<!--                </div>-->
-<!--              </ng-template>-->
-
             </p-dataView>
           </p-panel>
         </div>
 
       </div>
 
+      <!-- Music player card-->
       <div *ngIf="currentArtist" class="grid mt-5" id="music-player">
         <div class="col-12">
-          <app-player-card [artist]="currentArtist"></app-player-card>
+          <app-player-card [artist]="currentArtist"
+                           [audio]="currentAudioList"
+                           [currentHits]="currentHits">
+          </app-player-card>
         </div>
       </div>
-
 
     </div>
   </section>

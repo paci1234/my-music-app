@@ -24,6 +24,7 @@ export class AppComponent implements OnInit, OnDestroy {
   public currentAudioList: Artists;
   public currentHits: Artists;
   album = false;
+  playerCard = false;
   sub: Subscription;
   musicPlayer = false;
   isBottom: boolean;
@@ -73,10 +74,10 @@ export class AppComponent implements OnInit, OnDestroy {
           scrollTop: $('#music-player').offset().top - 50 + 'px'
         }, 200);
       });
-      $('#scrollToMusicPlayer').on('click', () => {
+      $('.album p-panel p-dataView ng-template #scrollToMusicPlayer').on('click', () => {
         console.log('triggered');
         $('html, body').animate({
-          scrollTop: $('#music-player').offset().top - 50 + 'px'
+          scrollTop: $('#musicPlayer').offset().top
         }, 200);
       });
       $('#pick-an-artist').on('click', () => {
@@ -97,6 +98,11 @@ export class AppComponent implements OnInit, OnDestroy {
 
   openAlbum() {
     this.album = !this.album;
+    if (this.album === true) {
+      this.playerCard = !this.playerCard;
+    } else {
+      this.playerCard = false;
+    }
   }
 
   openPlayer(artist) {

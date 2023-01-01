@@ -5,6 +5,7 @@ export interface Artists {
   bio: string;
   audioList: any;
   greatestHits: any;
+  counter: [];
 }
 
 export interface ArtistsDTO {

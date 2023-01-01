@@ -10,12 +10,13 @@ import {Subscription} from 'rxjs';
 })
 export class PlayerCardComponent implements OnInit, OnDestroy {
   artists: Artists[] = [];
-  @Input() artist: Artists;
-  @Input() audio: Artists;
+  @Input() currentArtist: Artists;
+  @Input() currentAudioList: Artists;
   @Input() currentHits: Artists;
   greatestHits: any;
   errorMessage = '';
   sub: Subscription;
+  counter = 0;
 
   // audioList = [{
   //   url: './assets/artists/ariana-grande/ariana_grande-no_tears_left_to_cry.mp3',
@@ -29,13 +30,12 @@ export class PlayerCardComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
       this.sub = this.artistsSvc.getArtists().subscribe(
-        artists => {
-          this.artists = artists;
+        res => {
+          this.artists = res;
+          this.greatestHits = this.currentArtist.greatestHits;
         },
         err => this.errorMessage = err
     );
-      // this.greatestHits = this.currentHits.greatestHits;
-      // console.log(this.currentHits.greatestHits);
   }
 
   ngOnDestroy() {

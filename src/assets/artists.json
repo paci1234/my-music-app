@@ -10,18 +10,18 @@
         "title": "Ariana Grande",
         "cover": "assets/images/artists/ariana_grande_bg.jpg"
       }],
-      "greatestHits" : {
-        "01": "Positions",
-        "02": "7 Rings",
-        "03": "No Tears Lef To Cry",
-        "04": "34 + 35",
-        "05": "Side To Side",
-        "06": "Bang Bang",
-        "07": "Problem",
-        "08": "Break Free",
-        "09": "Focus",
-        "10": "Into You"
-      }
+      "greatestHits" : [
+        {"hit": "Positions"},
+        {"hit": "7 Rings"},
+        {"hit": "No Tears Left To Cry"},
+        {"hit": "34 + 35"},
+        {"hit": "Side To Side"},
+        {"hit": "Bang Bang"},
+        {"hit": "Problem"},
+        {"hit": "Break Free"},
+        {"hit": "Focus"},
+        {"hit": "Into You"}
+      ]
     },
     {
       "id": 2,
@@ -33,18 +33,18 @@
         "title": "Justin Timberlake",
         "cover": "assets/images/artists/justin_timberlake_bg.jpg"
       }],
-      "greatestHits" : [{
-        "01": "Can's Stop The Feeling",
-        "02": "Mirrors",
-        "03": "Just Sing",
-        "04": "Give It To Me",
-        "05": "My Love",
-        "06": "What Goes Around...Comes Back Aroung",
-        "07": "Apologize",
-        "08": "Sexy Back",
-        "09": "True Colors",
-        "10": "Cry Me A River"
-      }]
+      "greatestHits" : [
+        {"hit": "Can's Stop The Feeling"},
+        {"hit": "Mirrors"},
+        {"hit": "Just Sing"},
+        {"hit": "Give It To Me"},
+        {"hit": "My Love"},
+        {"hit": "What Goes Around...Comes Back Aroung"},
+        {"hit": "Apologize"},
+        {"hit": "Sexy Back"},
+        {"hit": "True Colors"},
+        {"hit": "Cry Me A River"}
+      ]
     },
     {
       "id": 3,
@@ -56,18 +56,18 @@
         "title": "Justin Timberlake",
         "cover": "assets/images/artists/justin_timberlake_bg.jpg"
       }],
-      "greatestHits" : [{
-        "01": "Can's Stop The Feeling",
-        "02": "Mirrors",
-        "03": "Just Sing",
-        "04": "Give It To Me",
-        "05": "My Love",
-        "06": "What Goes Around...Comes Back Aroung",
-        "07": "Apologize",
-        "08": "Sexy Back",
-        "09": "True Colors",
-        "10": "Cry Me A River"
-      }]
+      "greatestHits" : [
+        {"hit": "Can's Stop The Feeling"},
+        {"hit": "Mirrors"},
+        {"hit": "Just Sing"},
+        {"hit": "Give It To Me"},
+        {"hit": "My Love"},
+        {"hit": "What Goes Around...Comes Back Aroung"},
+        {"hit": "Apologize"},
+        {"hit": "Sexy Back"},
+        {"hit": "True Colors"},
+        {"hit": "Cry Me A River"}
+      ]
     },
     {
       "id": 4,
@@ -79,18 +79,18 @@
         "title": "Justin Timberlake",
         "cover": "assets/images/artists/justin_timberlake_bg.jpg"
       }],
-      "greatestHits" : [{
-        "01": "Can's Stop The Feeling",
-        "02": "Mirrors",
-        "03": "Just Sing",
-        "04": "Give It To Me",
-        "05": "My Love",
-        "06": "What Goes Around...Comes Back Aroung",
-        "07": "Apologize",
-        "08": "Sexy Back",
-        "09": "True Colors",
-        "10": "Cry Me A River"
-      }]
+      "greatestHits" : [
+        {"hit": "Can's Stop The Feeling"},
+        {"hit": "Mirrors"},
+        {"hit": "Just Sing"},
+        {"hit": "Give It To Me"},
+        {"hit": "My Love"},
+        {"hit": "What Goes Around...Comes Back Aroung"},
+        {"hit": "Apologize"},
+        {"hit": "Sexy Back"},
+        {"hit": "True Colors"},
+        {"hit": "Cry Me A River"}
+      ]
     },
     {
       "id": 5,
@@ -102,18 +102,18 @@
         "title": "Justin Timberlake",
         "cover": "assets/images/artists/justin_timberlake_bg.jpg"
       }],
-      "greatestHits" : [{
-        "01": "Can's Stop The Feeling",
-        "02": "Mirrors",
-        "03": "Just Sing",
-        "04": "Give It To Me",
-        "05": "My Love",
-        "06": "What Goes Around...Comes Back Aroung",
-        "07": "Apologize",
-        "08": "Sexy Back",
-        "09": "True Colors",
-        "10": "Cry Me A River"
-      }]
+      "greatestHits" : [
+        {"hit": "Can's Stop The Feeling"},
+        {"hit": "Mirrors"},
+        {"hit": "Just Sing"},
+        {"hit": "Give It To Me"},
+        {"hit": "My Love"},
+        {"hit": "What Goes Around...Comes Back Aroung"},
+        {"hit": "Apologize"},
+        {"hit": "Sexy Back"},
+        {"hit": "True Colors"},
+        {"hit": "Cry Me A River"}
+      ]
     },
     {
       "id": 6,
@@ -125,18 +125,18 @@
         "title": "Justin Timberlake",
         "cover": "assets/images/artists/justin_timberlake_bg.jpg"
       }],
-      "greatestHits" : [{
-        "01": "Can's Stop The Feeling",
-        "02": "Mirrors",
-        "03": "Just Sing",
-        "04": "Give It To Me",
-        "05": "My Love",
-        "06": "What Goes Around...Comes Back Aroung",
-        "07": "Apologize",
-        "08": "Sexy Back",
-        "09": "True Colors",
-        "10": "Cry Me A River"
-      }]
+      "greatestHits" : [
+        {"hit": "Can's Stop The Feeling"},
+        {"hit": "Mirrors"},
+        {"hit": "Just Sing"},
+        {"hit": "Give It To Me"},
+        {"hit": "My Love"},
+        {"hit": "What Goes Around...Comes Back Aroung"},
+        {"hit": "Apologize"},
+        {"hit": "Sexy Back"},
+        {"hit": "True Colors"},
+        {"hit": "Cry Me A River"}
+      ]
     },
     {
       "id": 7,
@@ -148,18 +148,18 @@
         "title": "Justin Timberlake",
         "cover": "assets/images/artists/justin_timberlake_bg.jpg"
       }],
-      "greatestHits" : [{
-        "01": "Can's Stop The Feeling",
-        "02": "Mirrors",
-        "03": "Just Sing",
-        "04": "Give It To Me",
-        "05": "My Love",
-        "06": "What Goes Around...Comes Back Aroung",
-        "07": "Apologize",
-        "08": "Sexy Back",
-        "09": "True Colors",
-        "10": "Cry Me A River"
-      }]
+      "greatestHits" : [
+        {"hit": "Can's Stop The Feeling"},
+        {"hit": "Mirrors"},
+        {"hit": "Just Sing"},
+        {"hit": "Give It To Me"},
+        {"hit": "My Love"},
+        {"hit": "What Goes Around...Comes Back Aroung"},
+        {"hit": "Apologize"},
+        {"hit": "Sexy Back"},
+        {"hit": "True Colors"},
+        {"hit": "Cry Me A River"}
+      ]
     },
     {
       "id": 8,
@@ -171,18 +171,18 @@
         "title": "Justin Timberlake",
         "cover": "assets/images/artists/justin_timberlake_bg.jpg"
       }],
-      "greatestHits" : [{
-        "01": "Can's Stop The Feeling",
-        "02": "Mirrors",
-        "03": "Just Sing",
-        "04": "Give It To Me",
-        "05": "My Love",
-        "06": "What Goes Around...Comes Back Aroung",
-        "07": "Apologize",
-        "08": "Sexy Back",
-        "09": "True Colors",
-        "10": "Cry Me A River"
-      }]
+      "greatestHits" : [
+        {"hit": "Can's Stop The Feeling"},
+        {"hit": "Mirrors"},
+        {"hit": "Just Sing"},
+        {"hit": "Give It To Me"},
+        {"hit": "My Love"},
+        {"hit": "What Goes Around...Comes Back Aroung"},
+        {"hit": "Apologize"},
+        {"hit": "Sexy Back"},
+        {"hit": "True Colors"},
+        {"hit": "Cry Me A River"}
+      ]
     }
   ]
 }

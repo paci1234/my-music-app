@@ -5,11 +5,23 @@
       "name": "Ariana Grande",
       "src": "assets/images/artists/ariana_grande_bg.jpg",
       "bio": "Ariana Grande-Butera born June 26, 1993) is an American singer, songwriter, and actress. Her four-octave vocal range has received critical acclaim, and her personal life has been the subject of widespread media attention. She has received numerous accolades throughout her career, including two Grammy Awards, one Brit Award, one Bambi Award, two Billboard Music Awards, three American Music Awards, nine MTV Video Music Awards, and 27 Guinness World Records.",
-      "audioList": [{
+      "audioList": [
+        {
+          "url": "assets/artists/ariana-grande/ariana_grande-positions.mp3",
+          "title": "Positions",
+          "cover": "assets/images/artists/ariana_grande_bg.jpg"
+        },
+        {
+          "url": "assets/artists/ariana-grande/ariana_grande-7_rings.mp3",
+          "title": "7 Rings",
+          "cover": "assets/images/artists/ariana_grande_bg.jpg"
+        },
+        {
         "url": "assets/artists/ariana-grande/ariana_grande-no_tears_left_to_cry.mp3",
-        "title": "Ariana Grande",
+        "title": "No Tears Left To Cry",
         "cover": "assets/images/artists/ariana_grande_bg.jpg"
-      }],
+        }
+      ],
       "greatestHits" : [
         {"hit": "Positions"},
         {"hit": "7 Rings"},

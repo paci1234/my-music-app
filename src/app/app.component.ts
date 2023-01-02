@@ -21,8 +21,6 @@ export class AppComponent implements OnInit, OnDestroy {
   }
   public title = 'MY MUSIC APP';
   public currentArtist: Artists;
-  public currentAudioList: Artists;
-  public currentHits: Artists;
   album = false;
   playerCard = false;
   sub: Subscription;
@@ -107,8 +105,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
   openPlayer(artist) {
     this.currentArtist = artist;
-    this.currentAudioList = artist;
-    this.currentHits = artist;
+    // console.log(this.currentArtist);
   }
 
   // @HostListener('window:scroll', [])

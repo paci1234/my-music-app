@@ -101,13 +101,14 @@
         <div class="grid mt-5">
           <div class="col-6 col-offset-3">
             <button type="button" pButton pRipple label="Pick an artist" id="pick-an-artist"
-                    class="p-button-danger mx-3"
+                    class="p-button-info mx-3"
                     (click)="openAlbum()"></button>
-            <button type="button" pButton pRipple label="Create a Playlist" class="p-button-info"></button>
+            <!-- <button type="button" pButton pRipple label="Create a Playlist" class="p-button-info"></button> -->
           </div>
         </div>
 
         <!-- Choose / Filter the Artist-->
+        <div id="scrollToMusicPlayer"></div>
         <div *ngIf="album" class="album mt-5">
           <p-panel header="List of Artists" [toggleable]="true" class="player-card" toggleable>
             <p-dataView #dv [value]="artists" filterBy="name" [paginator]="true" [rows]="4">
@@ -138,7 +139,7 @@
                               pButton pRipple
                               label="Choose"
                               (click)="openPlayer(artist)"
-                              id="scrollToMusicPlayer"
+                              name="area"
                               class="p-button-info p-button-sm">
                       </button>
                     </div>
@@ -149,15 +150,13 @@
           </p-panel>
         </div>
 
-      </div>
-
-      <!-- Music player card-->
-      <div *ngIf="currentArtist" class="grid mt-5" id="musicPlayer">
-        <div *ngIf="playerCard">
+        <!-- Music player card-->
+        <div *ngIf="currentArtist" class="grid mt-5 musicPlayer">
           <div class="col-12">
             <app-player-card [currentArtist]="currentArtist"></app-player-card>
           </div>
         </div>
+
       </div>
 
     </div>

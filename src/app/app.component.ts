@@ -1,4 +1,4 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit, Output} from '@angular/core';
 import {PrimeNGConfig} from 'primeng/api';
 import {ArtistsService} from './artists.service';
 import {Artists} from './artists';
@@ -72,17 +72,22 @@ export class AppComponent implements OnInit, OnDestroy {
           scrollTop: $('#music-player').offset().top - 50 + 'px'
         }, 200);
       });
-      $('.album p-panel p-dataView ng-template #scrollToMusicPlayer').on('click', () => {
-        console.log('triggered');
-        $('html, body').animate({
-          scrollTop: $('#musicPlayer').offset().top
-        }, 200);
-      });
+
+
       $('#pick-an-artist').on('click', () => {
         $('html, body').animate({
           scrollTop: $('.album').offset().top - 50 + 'px'
         }, 200);
       });
+
+      $('#scrollToMusicPlayer').on('click', () => {
+        console.log('triggered');
+        $('html, body').animate({
+          scrollTop: $('.musicPlayer').offset().top
+        }, 200);
+      });
+
+
       $('#myMusicAppTitle').on('click', () => {
         $('html, body').animate({
           scrollTop: $('body').offset().top
@@ -95,16 +100,34 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   openAlbum() {
-    this.album = !this.album;
-    if (this.album === true) {
-      this.playerCard = !this.playerCard;
-    } else {
-      this.playerCard = false;
-    }
+    this.album = true;
+  }
+
+  scrollToMusicPlayer() {
+    const scroll = document.querySelector("#scrollToMusicPlayer");
+    // const musicPlayer = document.querySelector('.musicPlayer');
+    // musicPlayer.scrollIntoView();
+    scroll.addEventListener('click', e => {});
+    scroll.dispatchEvent(new Event('click'));
+  }
+
+  getOffsetOfMusicPlayer() {
+    function offset(el) {
+      var rect = el.getBoundingClientRect();
+
+      return rect.top
+  }
+
+    const musicPlayer = document.querySelector('.musicPlayer');
+    return offset(musicPlayer);
   }
 
   openPlayer(artist) {
     this.currentArtist = artist;
+    const musicPlayer = document.querySelector('.musicPlayer');
+    if(typeof(musicPlayer) != 'undefined' && musicPlayer != null) {
+      this.scrollToMusicPlayer();
+    }
     // console.log(this.currentArtist);
   }
 

@@ -1,4 +1,4 @@
-import {Component, OnDestroy, OnInit, Output} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {PrimeNGConfig} from 'primeng/api';
 import {ArtistsService} from './artists.service';
 import {Artists} from './artists';
@@ -63,9 +63,11 @@ export class AppComponent implements OnInit, OnDestroy {
         }, 200);
       });
       $('#global-search').on('click', () => {
-        $('html, body').animate({
-          scrollTop: $('.album').offset().top - 50 + 'px'
-        }, 200);
+        if($('.album').length && $('.album') != null) {
+          $('html, body').animate({
+            scrollTop: $('.album').offset().top - 50 + 'px'
+          }, 200);
+        }
       });
       $('#player').on('click', () => {
         $('html, body').animate({
@@ -81,12 +83,18 @@ export class AppComponent implements OnInit, OnDestroy {
       });
 
       $('#scrollToMusicPlayer').on('click', () => {
-        console.log('triggered');
         $('html, body').animate({
           scrollTop: $('.musicPlayer').offset().top
         }, 200);
       });
 
+      $('#go-to-player').on('click', () => {
+        if($('.musicPlayer').length && $('.musicPlayer') != null) {
+          $('html, body').animate({
+            scrollTop: $('.musicPlayer').offset().top
+          }, 200);
+        }
+      });
 
       $('#myMusicAppTitle').on('click', () => {
         $('html, body').animate({

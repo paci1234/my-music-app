@@ -25,13 +25,15 @@
                 </div>
               </div>
             </div>
-            <div class="grid mt-5">
-              <div class="col-12 align-content-center">
-                <p-button label="Return to the Artists" icon="pi pi-check"></p-button>
-              </div>
-            </div>
+          
           </p-card>
         </div>
       </div>
     </router-outlet>
   </p-panel>
+
+  <div class="grid mt-5">
+    <div class="col-12 align-content-center">
+      <p-button label="Return to the Artists section" icon="pi pi-check" (click)="chooseArtist()" id="pick-an-artist"></p-button>
+    </div>
+  </div>

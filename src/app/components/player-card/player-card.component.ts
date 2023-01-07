@@ -2,6 +2,8 @@ import {Component, Input, OnDestroy, OnInit} from '@angular/core';
 import {Artists} from '../../artists';
 import {Subscription} from 'rxjs';
 
+declare var $: any;
+
 @Component({
   selector: 'app-player-card',
   templateUrl: './player-card.component.html',
@@ -25,6 +27,29 @@ export class PlayerCardComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.greatestHits = this.currentArtist.greatestHits;
+
+    $(document).ready(() => {
+      $('#pick-an-artist').on('click', () => {
+        $('html, body').animate({
+          scrollTop: $('.album').offset().top - 50 + 'px'
+        }, 200);
+      });
+
+    });
+
+    this.chooseArtist();
+  }
+
+  triggerClick() {
+    const scroll = document.querySelector("#pick-an-artist");
+    if(scroll) {
+      scroll.addEventListener('click', e => {});
+      scroll.dispatchEvent(new Event('click'));
+    }
+  }
+
+  chooseArtist() {
+    this.triggerClick();
   }
 
   ngOnDestroy() {

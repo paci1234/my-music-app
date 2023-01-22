@@ -2,7 +2,7 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {PrimeNGConfig} from 'primeng/api';
 import {ArtistsService} from './artists.service';
 import {Artists} from './artists';
-import {forkJoin, Subscription} from 'rxjs';
+import {Subscription} from 'rxjs';
 
 declare var $: any;
 
@@ -17,10 +17,11 @@ export class AppComponent implements OnInit, OnDestroy {
   constructor(
     private primengConfig: PrimeNGConfig,
     private artistsSvc: ArtistsService
-  ) {
-  }
+  ) {}
+
   public title = 'MY MUSIC APP';
   public currentArtist: Artists;
+  public greatestHits: Artists;
   album = false;
   playerCard = false;
   sub: Subscription;
@@ -35,11 +36,8 @@ export class AppComponent implements OnInit, OnDestroy {
   isReady = false;
 
   ngOnInit() {
-    forkJoin(
-      this.artistsSvc.getArtists()
-    ).subscribe(res => {
-        this.artists = res[0];
-      });
+    this.artistsSvc.getArtists().subscribe(res => { this.artists = res });
+
     // Jquery
     $(document).on('scroll', () => {
       if ($(window).scrollTop() > 30) {
@@ -48,6 +46,7 @@ export class AppComponent implements OnInit, OnDestroy {
         $('.toolbar').removeClass('toolbar-on-scroll');
       }
     });
+    // Scrollble functions
     $(document).ready(() => {
       $('#search-in-album').on('shown.bs.modal', () => {
         $('#search-in-album').trigger('focus');
@@ -122,7 +121,6 @@ export class AppComponent implements OnInit, OnDestroy {
   getOffsetOfMusicPlayer() {
     function offset(el) {
       var rect = el.getBoundingClientRect();
-
       return rect.top
   }
 
@@ -130,13 +128,13 @@ export class AppComponent implements OnInit, OnDestroy {
     return offset(musicPlayer);
   }
 
-  openPlayer(artist) {
+  openPlayer(artist: any) {
     this.currentArtist = artist;
+    this.greatestHits = this.currentArtist.greatestHits;
     const musicPlayer = document.querySelector('.musicPlayer');
     if(typeof(musicPlayer) != 'undefined' && musicPlayer != null) {
       this.scrollToMusicPlayer();
     }
-    // console.log(this.currentArtist);
   }
 
   // @HostListener('window:scroll', [])

@@ -12,10 +12,10 @@ declare var $: any;
 export class PlayerCardComponent implements OnInit, OnDestroy {
   artists: Artists[] = [];
   @Input() currentArtist: Artists;
-  greatestHits: any;
+  @Input() greatestHits: Artists;
   errorMessage = '';
   sub: Subscription;
-  counter = 0;
+  isReady = false
 
   // audioList = [{
   //   url: './assets/artists/ariana-grande/ariana_grande-no_tears_left_to_cry.mp3',
@@ -38,6 +38,7 @@ export class PlayerCardComponent implements OnInit, OnDestroy {
     });
 
     this.chooseArtist();
+    console.log(this.greatestHits);
   }
 
   triggerClick() {

@@ -3,7 +3,7 @@ export interface Artists {
   name: string;
   src: string;
   bio: string;
-  audioList: any;
+  currentAudioList: any;
   greatestHits: any;
 }
 

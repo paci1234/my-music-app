@@ -22,6 +22,7 @@ export class AppComponent implements OnInit, OnDestroy {
   public title = 'MY MUSIC APP';
   public currentArtist: Artists;
   public greatestHits: Artists;
+  public currentAudioList: Artists;
   album = false;
   playerCard = false;
   sub: Subscription;
@@ -130,7 +131,9 @@ export class AppComponent implements OnInit, OnDestroy {
 
   openPlayer(artist: any) {
     this.currentArtist = artist;
-    this.greatestHits = this.currentArtist.greatestHits;
+    this.greatestHits = artist.greatestHits;
+    this.currentAudioList = artist.audioList;
+    
     const musicPlayer = document.querySelector('.musicPlayer');
     if(typeof(musicPlayer) != 'undefined' && musicPlayer != null) {
       this.scrollToMusicPlayer();
